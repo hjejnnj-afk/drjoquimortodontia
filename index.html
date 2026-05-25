@@ -83,11 +83,11 @@
   display: flex;
   width: 200%;
   height: 100%;
-  animation: scroll-horizontal 40s linear infinite;
+  animation: scroll-horizontal 30s linear infinite;
 }
 
 .carousel-slide {
-  flex: 0 0 25%;
+  flex: 0 0 50%;
   height: 100%;
   background-size: cover;
   background-position: center;
@@ -1053,14 +1053,10 @@ body[data-hero="glow"] .hero-photo::after{
   <!-- Carrossel INFINITO de Aparelhos -->
   <div class="carousel-container">
     <div class="carousel-track">
-      <!-- Imagens originais -->
+      <!-- 2 slides originais (50% cada = 100% visível) -->
       <div class="carousel-slide" style="background-image:url('assets/dr-aparelho.jpg')"></div>
       <div class="carousel-slide" style="background-image:url('assets/dr-invisalign.jpg')"></div>
-      <div class="carousel-slide" style="background-image:url('assets/dr-aparelho.jpg')"></div>
-      <div class="carousel-slide" style="background-image:url('assets/dr-invisalign.jpg')"></div>
-      <!-- Duplicadas para loop infinito -->
-      <div class="carousel-slide" style="background-image:url('assets/dr-aparelho.jpg')"></div>
-      <div class="carousel-slide" style="background-image:url('assets/dr-invisalign.jpg')"></div>
+      <!-- 2 duplicadas para loop infinito -->
       <div class="carousel-slide" style="background-image:url('assets/dr-aparelho.jpg')"></div>
       <div class="carousel-slide" style="background-image:url('assets/dr-invisalign.jpg')"></div>
     </div>
