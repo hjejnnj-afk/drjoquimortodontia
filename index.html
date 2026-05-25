@@ -63,6 +63,36 @@
   --max:1200px;
 }
 
+/* ───────── Animação Carrossel Hero ───────── */
+@keyframes scroll-horizontal {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.carousel-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.carousel-track {
+  display: flex;
+  width: 200%;
+  height: 100%;
+  animation: scroll-horizontal 40s linear infinite;
+}
+
+.carousel-slide {
+  flex: 0 0 25%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+}
+
 *{box-sizing:border-box}
 html{scroll-behavior:smooth; -webkit-text-size-adjust:100%}
 body{
@@ -1015,15 +1045,29 @@ body[data-hero="glow"] .hero-photo::after{
 </header>
 
 <!-- ═══════════ HERO ═══════════ -->
+
 <section class="hero" id="hero" style="position:relative; min-height:600px; overflow:hidden; padding:160px 0 60px">
   <!-- Fundo DESFOCADO -->
   <div style="position:absolute; top:-10px; left:-10px; right:-10px; bottom:-10px; background-image:url('assets/aparelhos-hero.jpg'); background-size:cover; background-position:center; filter:blur(12px); z-index:0"></div>
   
-  <!-- Aparelhos EM FOCO (imagem ÚNICA sem divisão) -->
-  <div style="position:absolute; top:0; left:0; right:0; bottom:0; background-image:url('assets/aparelhos-hero.jpg'); background-size:cover; background-position:center; z-index:1"></div>
+  <!-- Carrossel INFINITO de Aparelhos -->
+  <div class="carousel-container">
+    <div class="carousel-track">
+      <!-- Imagens originais -->
+      <div class="carousel-slide" style="background-image:url('assets/dr-aparelho.jpg')"></div>
+      <div class="carousel-slide" style="background-image:url('assets/dr-invisalign.jpg')"></div>
+      <div class="carousel-slide" style="background-image:url('assets/dr-aparelho.jpg')"></div>
+      <div class="carousel-slide" style="background-image:url('assets/dr-invisalign.jpg')"></div>
+      <!-- Duplicadas para loop infinito -->
+      <div class="carousel-slide" style="background-image:url('assets/dr-aparelho.jpg')"></div>
+      <div class="carousel-slide" style="background-image:url('assets/dr-invisalign.jpg')"></div>
+      <div class="carousel-slide" style="background-image:url('assets/dr-aparelho.jpg')"></div>
+      <div class="carousel-slide" style="background-image:url('assets/dr-invisalign.jpg')"></div>
+    </div>
+  </div>
   
-  <!-- Overlay sutil para ajustar contraste -->
-  <div style="position:absolute; top:0; left:0; right:0; bottom:0; background:linear-gradient(135deg, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0.2) 100%); z-index:2"></div>
+  <!-- Overlay MÍNIMO para ajustar contraste -->
+  <div style="position:absolute; top:0; left:0; right:0; bottom:0; background:linear-gradient(135deg, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0.10) 100%); z-index:2"></div>
   
   <div class="container hero-grid" style="position:relative; z-index:3">
     <div class="hero-copy" style="text-shadow: 0 2px 12px rgba(0,0,0,0.4), 0 4px 24px rgba(255,255,255,0.9)">
