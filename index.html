@@ -1015,12 +1015,18 @@ body[data-hero="glow"] .hero-photo::after{
 </header>
 
 <!-- ═══════════ HERO ═══════════ -->
-<section class="hero" id="hero" style="background-image:url('assets/aparelhos-hero.jpg'); background-size:cover; background-position:center; position:relative">
-  <!-- Overlay para legibilidade -->
-  <div style="position:absolute; top:0; left:0; right:0; bottom:0; background:linear-gradient(135deg, rgba(255,255,255,0.92) 0%, rgba(255,255,255,0.85) 100%); z-index:0"></div>
+<section class="hero" id="hero" style="position:relative; min-height:600px; overflow:hidden">
+  <!-- Fundo DESFOCADO -->
+  <div style="position:absolute; top:-10px; left:-10px; right:-10px; bottom:-10px; background-image:url('assets/aparelhos-hero.jpg'); background-size:cover; background-position:center; filter:blur(12px); z-index:0"></div>
   
-  <div class="container hero-grid" style="position:relative; z-index:1">
-    <div class="hero-copy">
+  <!-- Aparelhos EM FOCO (imagem ÚNICA sem divisão) -->
+  <div style="position:absolute; top:0; left:0; right:0; bottom:0; background-image:url('assets/aparelhos-hero.jpg'); background-size:cover; background-position:center; z-index:1"></div>
+  
+  <!-- Overlay sutil para ajustar contraste -->
+  <div style="position:absolute; top:0; left:0; right:0; bottom:0; background:linear-gradient(135deg, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0.2) 100%); z-index:2"></div>
+  
+  <div class="container hero-grid" style="position:relative; z-index:3">
+    <div class="hero-copy" style="text-shadow: 0 2px 12px rgba(0,0,0,0.4), 0 4px 24px rgba(255,255,255,0.9)">
       <span class="eyebrow">Aparelho Ortodôntico · Resultados até 40% Mais Rápidos</span>
       <h1>Corrija seu sorriso em <em>até 12 meses</em> — com aparelho de última geração.</h1>
       <p class="hero-sub">Sistema Damon e Invisalign: tecnologia que reduz o tempo de tratamento e o número de consultas. Menos desconforto, mais previsibilidade, resultado garantido pelo Dr. Joaquim.</p>
