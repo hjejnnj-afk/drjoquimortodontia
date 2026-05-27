@@ -5,13 +5,13 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
 <meta name="theme-color" content="#0e7a6b" />
 <title>Dr. Joaquim — Ortodontia de Referência Nacional · Sorriso perfeito em menos tempo</title>
-<meta name="description" content="Sistemas autoligados passivos de última geração com Dr. Joaquim, precursor do Damon Ultima no Brasil. Avaliação personalizada — agende sua consulta." />
+<meta name="description" content="Sistemas autoligados passivos de última geração com Dr. Joaquim, um dos precursores do Damon Ultima no Brasil. Avaliação personalizada — agende sua consulta." />
 <meta name="robots" content="index,follow" />
 
 <!-- Open Graph -->
 <meta property="og:type" content="website" />
 <meta property="og:title" content="Dr. Joaquim — Ortodontia de Referência Nacional" />
-<meta property="og:description" content="Sorriso perfeito em menos tempo com tecnologia internacional de ponta. +15 anos · Presidente CRO-MA · Speaker Internacional." />
+<meta property="og:description" content="Sorriso perfeito em menos tempo com tecnologia internacional de ponta. +18 anos · Ex-Presidente CRO-MA · Speaker Internacional." />
 <meta property="og:image" content="assets/dr-joaquim-jaleco.jpg" />
 
 <!-- Google Analytics placeholder — replace G-XXXXXXXXXX -->
@@ -61,36 +61,6 @@
   --font-body:'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
 
   --max:1200px;
-}
-
-/* ───────── Animação Carrossel Hero ───────── */
-@keyframes scroll-horizontal {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
-
-.carousel-container {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  overflow: hidden;
-  z-index: 1;
-}
-
-.carousel-track {
-  display: flex;
-  width: 200%;
-  height: 100%;
-  animation: scroll-horizontal 30s linear infinite;
-}
-
-.carousel-slide {
-  flex: 0 0 50%;
-  height: 100%;
-  background-size: cover;
-  background-position: center;
 }
 
 *{box-sizing:border-box}
@@ -235,6 +205,7 @@ p{margin:0}
   height:100%;
   object-fit:cover;
   object-position:50% 28%;
+  filter:brightness(1.15) contrast(1.02) saturate(1.05);
 }
 .hero-photo::after{
   content:""; position:absolute; inset:0; pointer-events:none;
@@ -310,17 +281,31 @@ p{margin:0}
     position:absolute;
     right:0; top:0; bottom:0; left:auto; inset:auto;
     right:0; top:0; bottom:0;
-    width:48%; height:auto;
+    width:50%; height:100%;
     margin-bottom:0;
     z-index:2;
+    border-radius:0;
+    box-shadow:none;
   }
+  .hero-photo::before{display:none}
   .hero-grid{
     position:relative; left:auto; right:auto; bottom:auto;
     padding:0 28px;
     display:grid; grid-template-columns:1fr; gap:0; align-items:center;
   }
-  .hero-photo img{height:90%; width:auto; max-width:100%; object-fit:contain; object-position:center bottom; margin:auto}
-  .hero-photo::after{display:none}
+  .hero-photo img{
+    height:100%; width:100%;
+    max-width:none;
+    object-fit:cover;
+    object-position:center 25%;
+    margin:0;
+    filter:brightness(1.18) contrast(1.02) saturate(1.05);
+  }
+  .hero-photo::after{
+    display:block;
+    content:""; position:absolute; inset:0; pointer-events:none;
+    background:linear-gradient(90deg, rgba(6,36,32,.85) 0%, rgba(6,36,32,.45) 35%, transparent 60%);
+  }
   .hero-copy{
     text-align:left; align-items:flex-start;
     max-width:54%;
@@ -417,12 +402,21 @@ section{padding:64px 0; position:relative}
   display:grid; place-items:center; color:var(--teal-700);
 }
 
-/* ───────── Casos (carrossel full-bleed) ───────── */
+/* ───────── Casos (sliders interativos) ───────── */
 .cases{
   background:#06201c;
-  padding:0;
+  padding:0 0 0;
   position:relative;
   overflow:hidden;
+}
+.cases::before{
+  content:"";
+  position:absolute; inset:0;
+  background:
+    radial-gradient(60% 40% at 20% 20%, rgba(30,168,143,.18), transparent 60%),
+    radial-gradient(50% 40% at 80% 80%, rgba(125,211,192,.10), transparent 60%);
+  pointer-events:none;
+  z-index:1;
 }
 .cases-head{
   text-align:center;
@@ -627,6 +621,291 @@ section{padding:64px 0; position:relative}
   font-size:clamp(18px,3.8vw,24px); color:var(--teal-900);
   margin:0 0 20px; letter-spacing:-.01em;
   text-wrap:balance;
+}
+
+/* ───────── Carrossel de Casos ───────── */
+.cases-carousel{
+  position:relative; z-index:3;
+  max-width:1100px;
+  margin:0 auto;
+  padding:0 16px 24px;
+}
+@media(min-width:760px){
+  .cases-carousel{padding:0 64px 32px}
+}
+
+.cc-track{
+  position:relative;
+  min-height:580px;
+  overflow:hidden;
+}
+@media(min-width:760px){
+  .cc-track{min-height:520px}
+}
+@media(min-width:880px){
+  .cc-track{min-height:600px}
+}
+
+.cc-slide{
+  position:absolute;
+  inset:0;
+  opacity:0;
+  visibility:hidden;
+  pointer-events:none;
+  transition:opacity .6s var(--ease-out), visibility 0s .6s;
+  display:flex;
+  flex-direction:column;
+  gap:20px;
+}
+.cc-slide.active{
+  opacity:1;
+  visibility:visible;
+  pointer-events:auto;
+  transition:opacity .6s var(--ease-out);
+}
+@media(min-width:880px){
+  .cc-slide{flex-direction:row; align-items:center; gap:40px}
+}
+
+.cc-nav{
+  position:absolute;
+  top:280px;
+  width:48px; height:48px;
+  border-radius:50%;
+  background:rgba(255,255,255,.95);
+  border:none;
+  color:var(--teal-900);
+  cursor:pointer;
+  z-index:10;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  box-shadow:0 8px 24px rgba(0,0,0,.3);
+  transition:all .3s var(--ease-spring);
+}
+.cc-nav:hover{
+  background:#fff;
+  transform:scale(1.1);
+}
+.cc-nav-prev{left:4px}
+.cc-nav-next{right:4px}
+@media(min-width:760px){
+  .cc-nav{width:52px; height:52px; top:240px}
+  .cc-nav-prev{left:8px}
+  .cc-nav-next{right:8px}
+}
+@media(min-width:880px){
+  .cc-nav{top:50%; transform:translateY(-50%)}
+  .cc-nav:hover{transform:translateY(-50%) scale(1.1)}
+  .cc-nav-prev{left:-8px}
+  .cc-nav-next{right:-8px}
+}
+
+.cc-dots{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:10px;
+  margin-top:32px;
+}
+.cc-dot{
+  width:10px; height:10px;
+  border-radius:50%;
+  border:none;
+  background:rgba(255,255,255,.25);
+  cursor:pointer;
+  padding:0;
+  transition:all .3s var(--ease-out);
+}
+.cc-dot:hover{
+  background:rgba(255,255,255,.45);
+  transform:scale(1.2);
+}
+.cc-dot.active{
+  width:32px;
+  border-radius:5px;
+  background:var(--teal-300);
+}
+
+.cc-counter{
+  text-align:center;
+  margin-top:14px;
+  color:rgba(255,255,255,.6);
+  font-size:13px;
+  font-weight:600;
+  letter-spacing:.08em;
+  font-family:var(--font-display);
+}
+.cc-counter span:first-child{color:var(--teal-300); font-weight:700}
+
+/* ───────── Before/After Interactive Slider ───────── */
+.ba-slider{
+  position:relative;
+  width:100%;
+  aspect-ratio: 4/5;
+  max-width:480px;
+  margin:0 auto;
+  border-radius:20px;
+  overflow:hidden;
+  background:#02100e;
+  box-shadow:0 24px 60px rgba(0,0,0,.5), 0 0 0 1px rgba(125,211,192,.18);
+  cursor:ew-resize;
+  user-select:none;
+  -webkit-user-select:none;
+  touch-action:none;
+}
+@media(min-width:880px){
+  .ba-slider{flex:0 0 48%; max-width:none}
+}
+
+.ba-image-after,
+.ba-image-before{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+}
+.ba-image-after img,
+.ba-image-before img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center;
+  display:block;
+  pointer-events:none;
+}
+
+.ba-image-before{
+  /* Initial: 50% revealed */
+  clip-path: polygon(0 0, 50% 0, 50% 100%, 0 100%);
+  transition: clip-path .05s linear;
+  z-index:2;
+}
+
+.ba-label{
+  position:absolute;
+  top:16px;
+  padding:8px 14px;
+  background:rgba(0,0,0,.65);
+  backdrop-filter:blur(10px);
+  -webkit-backdrop-filter:blur(10px);
+  color:#fff;
+  font-size:11px;
+  font-weight:800;
+  letter-spacing:.18em;
+  border-radius:var(--r-pill);
+  border:1px solid rgba(255,255,255,.15);
+  z-index:5;
+  pointer-events:none;
+}
+.ba-label-before{left:16px}
+.ba-label-after{
+  right:16px;
+  background:var(--teal-500);
+  color:var(--teal-900);
+  border-color:transparent;
+}
+
+.ba-handle{
+  position:absolute;
+  top:0; bottom:0;
+  left:50%;
+  width:2px;
+  background:#fff;
+  transform:translateX(-50%);
+  z-index:4;
+  pointer-events:none;
+  box-shadow:0 0 20px rgba(0,0,0,.5);
+}
+
+.ba-handle-circle{
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%, -50%);
+  width:52px; height:52px;
+  border-radius:50%;
+  background:#fff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:var(--teal-700);
+  box-shadow:0 8px 24px rgba(0,0,0,.4), 0 0 0 6px rgba(255,255,255,.18);
+  transition:transform .3s var(--ease-spring);
+}
+@media(min-width:760px){
+  .ba-handle-circle{width:60px; height:60px}
+}
+
+.ba-slider:hover .ba-handle-circle,
+.ba-slider:active .ba-handle-circle{
+  transform:translate(-50%, -50%) scale(1.1);
+}
+
+.ba-hint{
+  position:absolute;
+  bottom:16px;
+  left:50%;
+  transform:translateX(-50%);
+  padding:6px 14px;
+  background:rgba(0,0,0,.6);
+  backdrop-filter:blur(8px);
+  -webkit-backdrop-filter:blur(8px);
+  color:#fff;
+  font-size:11px;
+  font-weight:600;
+  letter-spacing:.08em;
+  border-radius:var(--r-pill);
+  z-index:5;
+  pointer-events:none;
+  opacity:.9;
+  animation:ba-pulse 2s ease-in-out infinite;
+}
+@keyframes ba-pulse{
+  0%, 100%{opacity:.6; transform:translateX(-50%) translateY(0)}
+  50%{opacity:1; transform:translateX(-50%) translateY(-3px)}
+}
+
+.ba-slider.interacted .ba-hint{
+  opacity:0;
+  transition:opacity .5s;
+  pointer-events:none;
+}
+
+.ba-caption{
+  color:#fff;
+  text-align:center;
+}
+@media(min-width:880px){
+  .ba-caption{flex:1; text-align:left; max-width:none}
+}
+.ba-caption .case-tag{
+  display:inline-block;
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:var(--teal-300);
+  margin-bottom:12px;
+  padding:6px 12px;
+  background:rgba(30,168,143,.16);
+  border-radius:var(--r-pill);
+  border:1px solid rgba(125,211,192,.22);
+}
+.ba-caption h3{
+  color:#fff;
+  font-family:var(--font-display);
+  font-size:clamp(20px,3.4vw,28px);
+  font-weight:500;
+  margin:0 0 12px;
+  letter-spacing:-.01em;
+  line-height:1.2;
+}
+.ba-caption p{
+  color:rgba(255,255,255,.78);
+  font-size:clamp(14px,2.4vw,16px);
+  line-height:1.6;
+  margin:0;
 }
 
 /* Old grid hidden */
@@ -1045,38 +1324,23 @@ body[data-hero="glow"] .hero-photo::after{
 </header>
 
 <!-- ═══════════ HERO ═══════════ -->
-
-<section class="hero" id="hero" style="position:relative; min-height:600px; overflow:hidden; padding:160px 0 60px">
-  <!-- Fundo DESFOCADO -->
-  <div style="position:absolute; top:-10px; left:-10px; right:-10px; bottom:-10px; background-image:url('assets/aparelhos-hero.jpg'); background-size:cover; background-position:center; filter:blur(12px); z-index:0"></div>
-  
-  <!-- Carrossel INFINITO de Aparelhos -->
-  <div class="carousel-container">
-    <div class="carousel-track">
-      <!-- 2 slides originais (50% cada = 100% visível) -->
-      <div class="carousel-slide" style="background-image:url('assets/dr-aparelho.jpg')"></div>
-      <div class="carousel-slide" style="background-image:url('assets/dr-invisalign.jpg')"></div>
-      <!-- 2 duplicadas para loop infinito -->
-      <div class="carousel-slide" style="background-image:url('assets/dr-aparelho.jpg')"></div>
-      <div class="carousel-slide" style="background-image:url('assets/dr-invisalign.jpg')"></div>
-    </div>
+<section class="hero" id="hero">
+  <div class="hero-photo" aria-hidden="true">
+    <!-- INSERIR FOTO PROFISSIONAL DR. JOAQUIM (PNG sem fundo) -->
+    <img src="assets/dr-joaquim-cutout.png" alt="" />
   </div>
-  
-  <!-- Overlay MÍNIMO para ajustar contraste -->
-  <div style="position:absolute; top:0; left:0; right:0; bottom:0; background:linear-gradient(135deg, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0.10) 100%); z-index:2"></div>
-  
-  <div class="container hero-grid" style="position:relative; z-index:3">
-    <div class="hero-copy" style="text-shadow: 0 2px 12px rgba(0,0,0,0.4), 0 4px 24px rgba(255,255,255,0.9)">
-      <span class="eyebrow">Aparelho Ortodôntico · Resultados até 40% Mais Rápidos</span>
-      <h1>Corrija seu sorriso em <em>até 12 meses</em> — com aparelho de última geração.</h1>
-      <p class="hero-sub">Sistema Damon e Invisalign: tecnologia que reduz o tempo de tratamento e o número de consultas. Menos desconforto, mais previsibilidade, resultado garantido pelo Dr. Joaquim.</p>
+  <div class="container hero-grid">
+    <div class="hero-copy">
+      <span class="eyebrow">Ortodontia de Referência Nacional</span>
+      <h1>Sorriso perfeito em <em>menos tempo</em>, com tecnologia internacional de ponta.</h1>
+      <p class="hero-sub">Tratamentos com sistemas autoligados passivos de última geração — menos consultas, menos desconforto, resultados previsíveis. Conduzidos pessoalmente pelo Dr. Joaquim, um dos precursores do Damon Ultima no Brasil.</p>
 
       <div class="hero-cta">
         <a href="#contato" class="btn btn-primary" data-cta="hero-primary">
-          Quero corrigir meu sorriso agora
+          Agendar minha avaliação
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
         </a>
-        <a href="https://wa.me/5598987038714?text=Quero%20saber%20mais%20sobre%20aparelho%20ortodôntico" class="btn btn-ghost" data-cta="hero-whatsapp" target="_blank" rel="noopener">
+        <a href="https://wa.me/5598987038714?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o" class="btn btn-ghost" data-cta="hero-whatsapp" target="_blank" rel="noopener">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.2-.7.2-.2.3-.8.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.4-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5-.1-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 1.9-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.3zM12 2a10 10 0 0 0-8.5 15.3L2 22l4.8-1.5A10 10 0 1 0 12 2z"/></svg>
           Falar no WhatsApp
         </a>
@@ -1084,62 +1348,18 @@ body[data-hero="glow"] .hero-photo::after{
 
       <div class="trust-row">
         <div class="trust-stat">
-          <span class="trust-num">40%</span>
-          <span class="trust-label">Mais<br/>rápido</span>
+          <span class="trust-num">+18</span>
+          <span class="trust-label">Anos em sistemas<br/>autoligados passivos</span>
         </div>
         <div class="trust-stat">
           <span class="trust-num">+3 mil</span>
-          <span class="trust-label">Sorrisos<br/>transformados</span>
+          <span class="trust-label">Pacientes<br/>tratados</span>
         </div>
         <div class="trust-stat">
-          <span class="trust-num">12 meses</span>
-          <span class="trust-label">Média de<br/>tratamento</span>
+          <span class="trust-num">CRO-MA</span>
+          <span class="trust-label">Ex-Presidente<br/>do Conselho</span>
         </div>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════ TECNOLOGIAS (NOVA SEÇÃO) ═══════════ -->
-<section class="authority" id="tecnologias" style="background:#f8f9fa">
-  <div class="container">
-    <div class="section-head reveal">
-      <span class="eyebrow">Tecnologia · Eficiência · Conforto</span>
-      <h2>Escolha o aparelho ideal <em>para o seu caso.</em></h2>
-      <p>Sistemas modernos que reduzem drasticamente o tempo de tratamento — sem abrir mão do resultado perfeito.</p>
-    </div>
-
-    <div class="auth-grid reveal" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(300px,1fr)); gap:32px; margin-top:48px">
-      <!-- SISTEMA DAMON -->
-      <div class="diff-card" style="text-align:center; padding:40px 32px">
-        <img src="assets/dr-aparelho.jpg" alt="Sistema Damon" style="width:100%; max-width:280px; height:280px; object-fit:cover; border-radius:16px; margin-bottom:24px" />
-        <h3 style="font-family:var(--font-display); font-size:24px; font-weight:600; color:var(--ink-900); margin-bottom:12px">Sistema Damon Ultima</h3>
-        <p style="color:var(--ink-600); margin-bottom:20px">Aparelho autoligado passivo — menor atrito, movimentação dentária mais rápida e menos desconforto.</p>
-        <ul style="text-align:left; color:var(--ink-700); line-height:1.8; list-style:none; padding:0">
-          <li>✅ <strong>Até 40% mais rápido</strong> que aparelhos convencionais</li>
-          <li>✅ <strong>Menos consultas</strong> de manutenção</li>
-          <li>✅ <strong>Menos dor</strong> e desconforto</li>
-          <li>✅ <strong>Resultado previsível</strong> desde o início</li>
-        </ul>
-      </div>
-
-      <!-- INVISALIGN -->
-      <div class="diff-card" style="text-align:center; padding:40px 32px">
-        <img src="assets/dr-invisalign.jpg" alt="Invisalign" style="width:100%; max-width:280px; height:280px; object-fit:cover; border-radius:16px; margin-bottom:24px" />
-        <h3 style="font-family:var(--font-display); font-size:24px; font-weight:600; color:var(--ink-900); margin-bottom:12px">Invisalign</h3>
-        <p style="color:var(--ink-600); margin-bottom:20px">Alinhadores transparentes removíveis — discrição máxima, conforto superior, higiene facilitada.</p>
-        <ul style="text-align:left; color:var(--ink-700); line-height:1.8; list-style:none; padding:0">
-          <li>✅ <strong>100% invisível</strong> — ninguém nota</li>
-          <li>✅ <strong>Remove para comer</strong> e escovar</li>
-          <li>✅ <strong>Menos emergências</strong> (sem fios ou bráquetes)</li>
-          <li>✅ <strong>Conforto absoluto</strong> no dia a dia</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="reveal" style="text-align:center; margin-top:48px">
-      <p style="font-size:18px; color:var(--ink-700); margin-bottom:24px"><strong>Não sabe qual é o melhor para você?</strong> Na avaliação, o Dr. Joaquim indica o sistema ideal para o seu caso.</p>
-      <a href="#contato" class="btn btn-primary">Agendar avaliação gratuita</a>
     </div>
   </div>
 </section>
@@ -1149,8 +1369,8 @@ body[data-hero="glow"] .hero-photo::after{
   <div class="container">
     <div class="section-head reveal">
       <span class="eyebrow">Autoridade · Formação · Reconhecimento</span>
-      <h2>Especialista em sistemas <em>de alta performance.</em></h2>
-      <p>Mais de 15 anos aplicando as técnicas mais avançadas em ortodontia autoligada — referência nacional em Damon Ultima.</p>
+      <h2>Uma trajetória reconhecida <em>dentro e fora do Brasil.</em></h2>
+      <p>Mais de uma década aplicando, ensinando e desenvolvendo as técnicas mais avançadas em ortodontia autoligada.</p>
     </div>
 
     <div class="cred-grid">
@@ -1214,8 +1434,8 @@ body[data-hero="glow"] .hero-photo::after{
         <div class="cred-icon">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 7h-9M14 17H5M17 17a2 2 0 1 0 0-4 2 2 0 0 0 0 4zM7 7a2 2 0 1 1 0-4 2 2 0 0 1 0 4z"/></svg>
         </div>
-        <h3 class="cred-title">Presidente CRO-MA</h3>
-        <p class="cred-body">Presidente do Conselho Regional de Odontologia do Maranhão — reconhecimento institucional da classe.</p>
+        <h3 class="cred-title">Ex-Presidente CRO-MA</h3>
+        <p class="cred-body">Ex-Presidente do Conselho Regional de Odontologia do Maranhão — reconhecimento institucional da classe.</p>
       </div>
     </div>
 
@@ -1248,180 +1468,154 @@ body[data-hero="glow"] .hero-photo::after{
 <!-- ═══════════ CASOS DE SUCESSO (carrossel full-bleed) ═══════════ -->
 <section class="cases" id="casos">
   <div class="cases-head reveal">
-    <span class="eyebrow">Casos Reais · Tempo Reduzido · Resultado Garantido</span>
-    <h2>Transformações completas <em>em menos de 18 meses.</em></h2>
-    <p>Com Sistema Damon e Invisalign, tratamentos que levariam 2-3 anos são concluídos em 9-18 meses — veja os resultados.</p>
+    <span class="eyebrow">Casos Reais · Antes e Depois</span>
+    <h2>Resultados que <em>falam por si.</em></h2>
+    <p>Arraste a barra para revelar a transformação — navegue entre os casos com as setas.</p>
   </div>
 
-  <div class="cases-stage" id="casesStage" aria-label="Casos antes e depois">
-    <!-- CASO 01 - PARTE 1/2 (ANTES) -->
-    <div class="case-slide active" data-img="assets/cases/caso-01-parte1.jpg">
-      <div class="case-frame case-frame-single">
-        <figure class="case-hero case-hero-single">
-          <img src="assets/cases/caso-01-parte1.jpg" alt="Caso 01 - Antes" loading="lazy" />
-        </figure>
-      </div>
-      <div class="case-caption">
-        <span class="case-tag">Caso 01 · Parte 1 de 2 · Damon Ultima</span>
-        <h3>Apinhamento severo — ANTES do tratamento</h3>
-        <p>Início do tratamento na infância. Próximo slide mostra o resultado final. →</p>
-      </div>
-    </div>
-    
-    <!-- CASO 01 - PARTE 2/2 (DEPOIS) -->
-    <div class="case-slide" data-img="assets/cases/caso-01-parte2.jpg">
-      <div class="case-frame case-frame-single">
-        <figure class="case-hero case-hero-single">
-          <img src="assets/cases/caso-01-parte2.jpg" alt="Caso 01 - Depois" loading="lazy" />
-        </figure>
-      </div>
-      <div class="case-caption">
-        <span class="case-tag">Caso 01 · Parte 2 de 2 · 18 meses depois</span>
-        <h3>Apinhamento severo — RESULTADO FINAL</h3>
-        <p>Finalização estética completa da infância à vida adulta. Mesmo paciente do slide anterior.</p>
-      </div>
-    </div>
-    
-    <!-- CASO 02 - PARTE 1/2 (ANTES) -->
-    <div class="case-slide" data-img="assets/cases/caso-02-parte1.jpg">
-      <div class="case-frame case-frame-single">
-        <figure class="case-hero case-hero-single">
-          <img src="assets/cases/caso-02-parte1.jpg" alt="Caso 02 - Antes" loading="lazy" />
-        </figure>
-      </div>
-      <div class="case-caption">
-        <span class="case-tag">Caso 02 · Parte 1 de 2 · Pitts 21</span>
-        <h3>Diastemas e desalinhamento — ANTES</h3>
-        <p>Início do tratamento com sistema autoligado. Veja o resultado no próximo slide. →</p>
-      </div>
-    </div>
-    
-    <!-- CASO 02 - PARTE 2/2 (DEPOIS) -->
-    <div class="case-slide" data-img="assets/cases/caso-02-parte2.jpg">
-      <div class="case-frame case-frame-single">
-        <figure class="case-hero case-hero-single">
-          <img src="assets/cases/caso-02-parte2.jpg" alt="Caso 02 - Depois" loading="lazy" />
-        </figure>
-      </div>
-      <div class="case-caption">
-        <span class="case-tag">Caso 02 · Parte 2 de 2 · 24 meses depois</span>
-        <h3>Diastemas e desalinhamento — RESULTADO</h3>
-        <p>Sorriso natural e harmonioso. Mesmo paciente do slide anterior.</p>
-      </div>
-    </div>
-    
-    <!-- CASO 03 - PARTE 1/2 (ANTES) -->
-    <div class="case-slide" data-img="assets/cases/caso-03-parte1.jpg">
-      <div class="case-frame case-frame-single">
-        <figure class="case-hero case-hero-single">
-          <img src="assets/cases/caso-03-parte1.jpg" alt="Caso 03 - Antes" loading="lazy" />
-        </figure>
-      </div>
-      <div class="case-caption">
-        <span class="case-tag">Caso 03 · Parte 1 de 2 · G2 System</span>
-        <h3>Tratamento ortodôntico — ANTES</h3>
-        <p>Durante o tratamento com aparelho fixo. Próximo slide mostra o resultado. →</p>
-      </div>
-    </div>
-    
-    <!-- CASO 03 - PARTE 2/2 (DEPOIS) -->
-    <div class="case-slide" data-img="assets/cases/caso-03-parte2.jpg">
-      <div class="case-frame case-frame-single">
-        <figure class="case-hero case-hero-single">
-          <img src="assets/cases/caso-03-parte2.jpg" alt="Caso 03 - Depois" loading="lazy" />
-        </figure>
-      </div>
-      <div class="case-caption">
-        <span class="case-tag">Caso 03 · Parte 2 de 2 · 18 meses depois</span>
-        <h3>Tratamento ortodôntico — RESULTADO FINAL</h3>
-        <p>Recuperação completa da autoestima. Mesmo paciente do slide anterior.</p>
-      </div>
-    </div>
-    
-    <!-- CASO 04 -->
-    <div class="case-slide" data-img="assets/cases/caso-04.jpg">
-      <div class="case-frame case-frame-single">
-        <figure class="case-hero case-hero-single">
-          <img src="assets/cases/caso-04.jpg" alt="Caso 04 - Antes e Depois" loading="lazy" />
-        </figure>
-      </div>
-      <div class="case-caption">
-        <span class="case-tag">Damon Ultima · 14 meses</span>
-        <h3>Realinhamento adulto com finalização detalhada</h3>
-        <p>Precisão oclusal e closeups que mostram a qualidade do acabamento.</p>
-      </div>
-    </div>
-    
-    <!-- CASO 05 -->
-    <div class="case-slide" data-img="assets/cases/caso-05.jpg">
-      <div class="case-frame case-frame-single">
-        <figure class="case-hero case-hero-single">
-          <img src="assets/cases/caso-05.jpg" alt="Caso 05 - Antes e Depois" loading="lazy" />
-        </figure>
-      </div>
-      <div class="case-caption">
-        <span class="case-tag">Pitts 21 · 20 meses</span>
-        <h3>Adolescente → jovem adulto</h3>
-        <p>Acompanhamento contínuo com transformação além do sorriso.</p>
-      </div>
-    </div>
-        </figure>
-      </div>
-      <div class="case-caption">
-        <span class="case-tag">Pitts 21 · 20 meses</span>
-        <h3>Adolescente → jovem adulto</h3>
-        <p>Apinhamento severo corrigido com tecnologia internacional.</p>
-      </div>
-    </div>
-    <div class="case-slide" data-img="assets/cases/case-06.jpeg" data-tech="G2 System" data-time="12 meses">
-      <div class="case-frame case-frame-single">
-        <figure class="case-hero case-hero-single">
-          <img src="assets/cases/case-06.jpeg" alt="Refinamento sutil e altamente estético" loading="lazy" />
-        </figure>
-      </div>
-      <div class="case-caption">
-        <span class="case-tag">Pitts 21 · 20 meses</span>
-        <h3>Adolescente → jovem adulto</h3>
-        <p>Acompanhamento contínuo com transformação além do sorriso.</p>
-      </div>
-    </div>
-    
-    <!-- CASO 06 -->
-    <div class="case-slide" data-img="assets/cases/caso-06.jpg">
-      <div class="case-frame case-frame-single">
-        <figure class="case-hero case-hero-single">
-          <img src="assets/cases/caso-06.jpg" alt="Caso 06 - Antes e Depois" loading="lazy" />
-        </figure>
-      </div>
-      <div class="case-caption">
-        <span class="case-tag">G2 System · 12 meses</span>
-        <h3>Refinamento sutil e altamente estético</h3>
-        <p>Tratamento autoligado passivo com resultado natural e equilibrado.</p>
-      </div>
-    </div>
-    
-    <!-- CASO 07 -->
-    <div class="case-slide" data-img="assets/cases/caso-07.jpg">
-      <div class="case-frame case-frame-single">
-        <figure class="case-hero case-hero-single">
-          <img src="assets/cases/caso-07.jpg" alt="Caso 07 - Antes e Depois" loading="lazy" />
-        </figure>
-      </div>
-      <div class="case-caption">
-        <span class="case-tag">Damon Ultima · 15 meses</span>
-        <h3>Do aparelho ativo ao sorriso pronto</h3>
-        <p>Finalização completa com alta clínica e estabilidade do resultado.</p>
-      </div>
-    </div>
-
-    <div class="case-dots" id="caseDots" role="tablist" aria-label="Navegar casos"></div>
-
-    <!-- Meia-lua verde água na borda inferior — transição estetica -->
-    <div class="cases-arc" aria-hidden="true">
-      <svg viewBox="0 0 400 80" preserveAspectRatio="none">
-        <path class="cases-arc-glow" d="M0,80 L0,68 Q200,-12 400,68 L400,80 Z" />
-        <path class="cases-arc-fill" d="M0,80 L0,68 Q200,-8 400,68 L400,80 Z" />
+  <div class="cases-carousel">
+    <!-- Botão Anterior -->
+    <button class="cc-nav cc-nav-prev" aria-label="Caso anterior" type="button">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="15 18 9 12 15 6"></polyline>
       </svg>
+    </button>
+
+    <!-- Track com todos os casos -->
+    <div class="cc-track" id="ccTrack">
+
+      <!-- CASO 01 -->
+      <div class="cc-slide active" data-case="1">
+        <div class="ba-slider">
+          <div class="ba-image-after">
+            <img src="assets/cases/caso-01-parte2.jpg" alt="Caso 01 - Depois" loading="lazy" />
+            <div class="ba-label ba-label-after">DEPOIS</div>
+          </div>
+          <div class="ba-image-before">
+            <img src="assets/cases/caso-01-parte1.jpg" alt="Caso 01 - Antes" loading="lazy" />
+            <div class="ba-label ba-label-before">ANTES</div>
+          </div>
+          <div class="ba-handle">
+            <div class="ba-handle-circle">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="15 18 9 12 15 6"></polyline>
+                <polyline points="9 18 15 12 9 6" style="transform:translateX(6px)"></polyline>
+              </svg>
+            </div>
+          </div>
+          <div class="ba-hint">← Arraste para revelar →</div>
+        </div>
+        <div class="ba-caption">
+          <span class="case-tag">Caso 01 · Damon Ultima · 18 meses</span>
+          <h3>Apinhamento severo — Da infância ao sorriso pronto</h3>
+          <p>Finalização estética completa, acompanhamento desde a infância até a vida adulta.</p>
+        </div>
+      </div>
+
+      <!-- CASO 02 -->
+      <div class="cc-slide" data-case="2">
+        <div class="ba-slider">
+          <div class="ba-image-after">
+            <img src="assets/cases/caso-02-parte2.jpg" alt="Caso 02 - Depois" loading="lazy" />
+            <div class="ba-label ba-label-after">DEPOIS</div>
+          </div>
+          <div class="ba-image-before">
+            <img src="assets/cases/caso-02-parte1.jpg" alt="Caso 02 - Antes" loading="lazy" />
+            <div class="ba-label ba-label-before">ANTES</div>
+          </div>
+          <div class="ba-handle">
+            <div class="ba-handle-circle">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="15 18 9 12 15 6"></polyline>
+                <polyline points="9 18 15 12 9 6" style="transform:translateX(6px)"></polyline>
+              </svg>
+            </div>
+          </div>
+          <div class="ba-hint">← Arraste para revelar →</div>
+        </div>
+        <div class="ba-caption">
+          <span class="case-tag">Caso 02 · Pitts 21 · 24 meses</span>
+          <h3>Diastemas e desalinhamento — Sorriso harmonioso</h3>
+          <p>Tratamento com sistema autoligado entregando resultado natural e equilibrado.</p>
+        </div>
+      </div>
+
+      <!-- CASO 03 -->
+      <div class="cc-slide" data-case="3">
+        <div class="ba-slider">
+          <div class="ba-image-after">
+            <img src="assets/cases/caso-03-parte2.jpg" alt="Caso 03 - Depois" loading="lazy" />
+            <div class="ba-label ba-label-after">DEPOIS</div>
+          </div>
+          <div class="ba-image-before">
+            <img src="assets/cases/caso-03-parte1.jpg" alt="Caso 03 - Antes" loading="lazy" />
+            <div class="ba-label ba-label-before">ANTES</div>
+          </div>
+          <div class="ba-handle">
+            <div class="ba-handle-circle">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="15 18 9 12 15 6"></polyline>
+                <polyline points="9 18 15 12 9 6" style="transform:translateX(6px)"></polyline>
+              </svg>
+            </div>
+          </div>
+          <div class="ba-hint">← Arraste para revelar →</div>
+        </div>
+        <div class="ba-caption">
+          <span class="case-tag">Caso 03 · G2 System · 18 meses</span>
+          <h3>Tratamento ortodôntico — Recuperação da autoestima</h3>
+          <p>Resultado final com alta clínica e estabilidade duradoura.</p>
+        </div>
+      </div>
+
+      <!-- CASO 04 -->
+      <div class="cc-slide" data-case="4">
+        <div class="ba-slider">
+          <div class="ba-image-after">
+            <img src="assets/cases/caso-04-parte2.jpg" alt="Caso 04 - Depois" loading="lazy" />
+            <div class="ba-label ba-label-after">DEPOIS</div>
+          </div>
+          <div class="ba-image-before">
+            <img src="assets/cases/caso-04-parte1.jpg" alt="Caso 04 - Antes" loading="lazy" />
+            <div class="ba-label ba-label-before">ANTES</div>
+          </div>
+          <div class="ba-handle">
+            <div class="ba-handle-circle">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="15 18 9 12 15 6"></polyline>
+                <polyline points="9 18 15 12 9 6" style="transform:translateX(6px)"></polyline>
+              </svg>
+            </div>
+          </div>
+          <div class="ba-hint">← Arraste para revelar →</div>
+        </div>
+        <div class="ba-caption">
+          <span class="case-tag">Caso 04 · Damon Ultima · Adolescente</span>
+          <h3>Da timidez ao sorriso aberto</h3>
+          <p>Tratamento ortodôntico completo na adolescência — sorriso pronto para a vida adulta.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Botão Próximo -->
+    <button class="cc-nav cc-nav-next" aria-label="Próximo caso" type="button">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="9 18 15 12 9 6"></polyline>
+      </svg>
+    </button>
+
+    <!-- Dots de navegação -->
+    <div class="cc-dots" id="ccDots" role="tablist" aria-label="Navegar casos">
+      <button type="button" class="cc-dot active" data-index="0" aria-label="Caso 1"></button>
+      <button type="button" class="cc-dot" data-index="1" aria-label="Caso 2"></button>
+      <button type="button" class="cc-dot" data-index="2" aria-label="Caso 3"></button>
+      <button type="button" class="cc-dot" data-index="3" aria-label="Caso 4"></button>
+    </div>
+
+    <!-- Contador -->
+    <div class="cc-counter">
+      <span id="ccCurrent">1</span> / <span id="ccTotal">4</span>
     </div>
   </div>
 
@@ -1537,14 +1731,14 @@ body[data-hero="glow"] .hero-photo::after{
   <div class="container">
     <div class="final-grid">
       <div class="reveal">
-        <span class="urgency-pill"><span class="pulse"></span>Últimas vagas de maio — agenda fecha em breve</span>
-        <h2>Comece seu tratamento <em>ainda este mês.</em></h2>
-        <p class="final-lead">Preencha o formulário e nossa equipe entrará em contato em até 1 dia útil para agendar sua avaliação gratuita e sem compromisso.</p>
+        <span class="urgency-pill"><span class="pulse"></span>Agenda concorrida · vagas limitadas em maio</span>
+        <h2>Vamos planejar o seu <em>sorriso ideal?</em></h2>
+        <p class="final-lead">Deixe seu contato e nossa equipe entrará em contato em até 1 dia útil para agendar sua avaliação personalizada com o Dr. Joaquim.</p>
         <ul class="final-bullets">
-          <li><strong>Avaliação completa gratuita</strong> com análise digital do seu caso</li>
-          <li><strong>Simulação do resultado final</strong> — veja como ficará seu sorriso</li>
-          <li><strong>Plano de tratamento</strong> com prazo exato e valor total</li>
-          <li><strong>Escolha entre Damon ou Invisalign</strong> — indicação personalizada</li>
+          <li>Avaliação completa com análise digital do seu sorriso</li>
+          <li>Plano de tratamento personalizado e prazo estimado</li>
+          <li>Apresentação das opções de tecnologia (Damon Ultima · Pitts 21 · G2)</li>
+          <li>Esclarecimento de todas as dúvidas sem compromisso</li>
         </ul>
       </div>
 
@@ -1621,12 +1815,22 @@ body[data-hero="glow"] .hero-photo::after{
       <div>
         <h5>Contato</h5>
         <ul>
-          <li><a href="tel:+5598900000000">(98) 9 0000-0000</a></li>
-          <li><a href="https://wa.me/5598900000000">WhatsApp direto</a></li>
+          <li><a href="tel:+5598987038714">(98) 98703-8714</a></li>
+          <li><a href="https://wa.me/5598987038714">WhatsApp direto</a></li>
           <li><a href="mailto:contato@drjoaquim.com.br">contato@drjoaquim.com.br</a></li>
         </ul>
         <h5 style="margin-top:24px">Endereço</h5>
-        <p>Av. dos Holandeses, 0000<br/>Calhau · São Luís — MA<br/>CEP 65000-000</p>
+        <p>
+          <a href="https://www.google.com/maps/place/Joaquim+Gon%C3%A7alves+-+Ortodontia+est%C3%A9tica+em+S%C3%A3o+Lu%C3%ADs,+MA,+ed.+Praia+Shopping+-+Av.+dos+Holandeses,+s%2Fn+-+Calhau,+S%C3%A3o+Lu%C3%ADs+-+MA,+65071-380/@-2.4925915,-44.2649557,15z/data=!4m6!3m5!1s0x7f68d95187e306f:0xa790044f430e8115!8m2!3d-2.4925915!4d-44.2649557" target="_blank" rel="noopener" style="color:inherit; text-decoration:none">
+            ed. Praia Shopping<br/>Av. dos Holandeses, s/n<br/>Calhau · São Luís — MA<br/>CEP 65071-380
+          </a>
+        </p>
+        <p style="margin-top:12px">
+          <a href="https://www.google.com/maps/place/Joaquim+Gon%C3%A7alves+-+Ortodontia+est%C3%A9tica+em+S%C3%A3o+Lu%C3%ADs,+MA,+ed.+Praia+Shopping+-+Av.+dos+Holandeses,+s%2Fn+-+Calhau,+S%C3%A3o+Lu%C3%ADs+-+MA,+65071-380/@-2.4925915,-44.2649557,15z/data=!4m6!3m5!1s0x7f68d95187e306f:0xa790044f430e8115!8m2!3d-2.4925915!4d-44.2649557" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:6px; color:var(--teal-300); font-weight:600; font-size:14px">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Ver no Google Maps
+          </a>
+        </p>
       </div>
 
       <div>
@@ -1639,7 +1843,7 @@ body[data-hero="glow"] .hero-photo::after{
           <li><a href="#contato">Agendar avaliação</a></li>
         </ul>
         <h5 style="margin-top:24px">Legal</h5>
-        <p>CRO-MA · Responsável Técnico<br/>Dr. Joaquim — CRO/MA 0000</p>
+        <p>CRO-MA · Responsável Técnico<br/>Dr. Joaquim — CRO/MA 998</p>
       </div>
     </div>
 
@@ -1651,7 +1855,7 @@ body[data-hero="glow"] .hero-photo::after{
 </footer>
 
 <!-- ═══════════ WHATSAPP FLUTUANTE ═══════════ -->
-<a href="https://wa.me/5598900000000?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o" class="wa-float" aria-label="Fale conosco no WhatsApp" data-cta="whatsapp-float" target="_blank" rel="noopener">
+<a href="https://wa.me/5598987038714?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o" class="wa-float" aria-label="Fale conosco no WhatsApp" data-cta="whatsapp-float" target="_blank" rel="noopener">
   <svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.2-.7.2-.2.3-.8.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.4-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5-.1-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 1.9-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.3zM12 2a10 10 0 0 0-8.5 15.3L2 22l4.8-1.5A10 10 0 1 0 12 2z"/></svg>
 </a>
 
@@ -1752,62 +1956,116 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
   const lbTag = document.getElementById('lb-tag');
   const closeBtn = document.getElementById('lb-close');
 
-  // ── Cases carousel (auto-rotating with fade)
-  const stage = document.getElementById('casesStage');
-  if (stage) {
-    const slides = Array.from(stage.querySelectorAll('.case-slide'));
-    const dotsContainer = document.getElementById('caseDots');
-    let current = 0;
-    let timer = null;
-    const ROT_MS = 5200;
+  // ── Before/After Interactive Sliders
+  const baSliders = document.querySelectorAll('.ba-slider');
+  baSliders.forEach(slider => {
+    const beforeImg = slider.querySelector('.ba-image-before');
+    const handle = slider.querySelector('.ba-handle');
+    if (!beforeImg || !handle) return;
+    let isDragging = false;
+    let hasInteracted = false;
 
-    // Build dots
-    slides.forEach((_, i) => {
-      const b = document.createElement('button');
-      b.type = 'button';
-      b.setAttribute('role', 'tab');
-      b.setAttribute('aria-label', `Caso ${i+1}`);
-      if (i === 0) b.classList.add('active');
-      b.addEventListener('click', (e) => { e.stopPropagation(); go(i, true); });
-      dotsContainer.appendChild(b);
+    const updatePosition = (clientX) => {
+      const rect = slider.getBoundingClientRect();
+      let percent = ((clientX - rect.left) / rect.width) * 100;
+      percent = Math.max(0, Math.min(100, percent));
+      
+      beforeImg.style.clipPath = `polygon(0 0, ${percent}% 0, ${percent}% 100%, 0 100%)`;
+      handle.style.left = `${percent}%`;
+
+      if (!hasInteracted) {
+        slider.classList.add('interacted');
+        hasInteracted = true;
+      }
+    };
+
+    // Mouse events
+    slider.addEventListener('mousedown', (e) => {
+      isDragging = true;
+      updatePosition(e.clientX);
+      e.preventDefault();
     });
-    const dots = Array.from(dotsContainer.children);
 
-    const go = (i, restart) => {
+    document.addEventListener('mousemove', (e) => {
+      if (!isDragging) return;
+      updatePosition(e.clientX);
+    });
+
+    document.addEventListener('mouseup', () => {
+      isDragging = false;
+    });
+
+    // Touch events
+    slider.addEventListener('touchstart', (e) => {
+      isDragging = true;
+      updatePosition(e.touches[0].clientX);
+    }, {passive:true});
+
+    slider.addEventListener('touchmove', (e) => {
+      if (!isDragging) return;
+      updatePosition(e.touches[0].clientX);
+      e.preventDefault();
+    }, {passive:false});
+
+    slider.addEventListener('touchend', () => {
+      isDragging = false;
+    });
+
+    // Click anywhere on slider to move handle
+    slider.addEventListener('click', (e) => {
+      if (e.target.closest('.ba-handle')) return;
+      updatePosition(e.clientX);
+    });
+  });
+
+  // ── Cases Carousel Navigation
+  const ccTrack = document.getElementById('ccTrack');
+  if (ccTrack) {
+    const slides = Array.from(ccTrack.querySelectorAll('.cc-slide'));
+    const dots = Array.from(document.querySelectorAll('.cc-dot'));
+    const prevBtn = document.querySelector('.cc-nav-prev');
+    const nextBtn = document.querySelector('.cc-nav-next');
+    const currentCounter = document.getElementById('ccCurrent');
+    const totalCounter = document.getElementById('ccTotal');
+    let current = 0;
+
+    if (totalCounter) totalCounter.textContent = slides.length;
+
+    const goTo = (index) => {
       slides[current].classList.remove('active');
-      dots[current].classList.remove('active');
-      current = (i + slides.length) % slides.length;
+      dots[current]?.classList.remove('active');
+      current = (index + slides.length) % slides.length;
       slides[current].classList.add('active');
-      dots[current].classList.add('active');
-      if (restart) { clearInterval(timer); startTimer(); }
-    };
-    const startTimer = () => {
-      timer = setInterval(() => go(current + 1), ROT_MS);
-    };
-    startTimer();
+      dots[current]?.classList.add('active');
+      if (currentCounter) currentCounter.textContent = current + 1;
 
-    // Pause on hover/touch
-    stage.addEventListener('mouseenter', () => clearInterval(timer));
-    stage.addEventListener('mouseleave', startTimer);
+      // Reset slider position when changing slide
+      const activeSlider = slides[current].querySelector('.ba-slider');
+      if (activeSlider) {
+        const beforeImg = activeSlider.querySelector('.ba-image-before');
+        const handle = activeSlider.querySelector('.ba-handle');
+        if (beforeImg && handle) {
+          beforeImg.style.clipPath = 'polygon(0 0, 50% 0, 50% 100%, 0 100%)';
+          handle.style.left = '50%';
+        }
+      }
+    };
 
-    // Click slide opens lightbox with that slide's image
-    stage.addEventListener('click', (e) => {
-      // ignore clicks on dots
-      if (e.target.closest('.case-dots')) return;
-      const slide = slides[current];
-      const imgSrc = slide.dataset.img;
-      const tech = slide.dataset.tech || '';
-      const time = slide.dataset.time || '';
-      const h3 = slide.querySelector('h3')?.textContent || '';
-      const p = slide.querySelector('p')?.textContent || '';
-      lbTitle.textContent = h3;
-      lbDesc.textContent = p;
-      lbPatient.textContent = '';
-      lbTag.textContent = `${tech}${time ? ' · ' + time : ''}`;
-      const lbImg = document.getElementById('lb-img');
-      if (lbImg && imgSrc) { lbImg.src = imgSrc; lbImg.alt = h3; }
-      lb.classList.add('open');
-      document.body.style.overflow = 'hidden';
+    prevBtn?.addEventListener('click', () => goTo(current - 1));
+    nextBtn?.addEventListener('click', () => goTo(current + 1));
+    dots.forEach((dot, i) => {
+      dot.addEventListener('click', () => goTo(i));
+    });
+
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+      // Only when carousel is in viewport
+      const rect = ccTrack.getBoundingClientRect();
+      const inView = rect.top < window.innerHeight && rect.bottom > 0;
+      if (!inView) return;
+
+      if (e.key === 'ArrowLeft') goTo(current - 1);
+      if (e.key === 'ArrowRight') goTo(current + 1);
     });
   }
   const closeLB = () => { lb.classList.remove('open'); document.body.style.overflow = ''; };
