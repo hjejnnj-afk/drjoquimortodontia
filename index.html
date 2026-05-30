@@ -114,7 +114,8 @@ input,select,textarea{font:inherit; color:inherit}
 h1,h2,h3,h4{font-family:var(--font-display); font-weight:600; color:var(--ink-900); margin:0; letter-spacing:-.02em; line-height:1.1}
 p{margin:0}
 
-.container{max-width:var(--max); margin:0 auto; padding:0 24px}
+.container{max-width:var(--max); margin:0 auto; padding:0 20px}
+@media(min-width:760px){.container{padding:0 28px}}
 @media(min-width:1024px){.container{padding:0 28px}}
 
 .eyebrow{
@@ -162,10 +163,10 @@ p{margin:0}
   padding:10px 0;
 }
 .header-row{display:flex; align-items:center; justify-content:space-between; gap:16px}
-.brand{display:flex; align-items:center; gap:12px; min-width:0}
+.brand{display:flex; align-items:center; gap:10px; min-width:0; flex:1}
 .brand-mark{
   display:flex; align-items:center;
-  height:34px;
+  height:30px;
   flex-shrink:0;
 }
 .brand-mark img{
@@ -174,15 +175,27 @@ p{margin:0}
 }
 .brand-mark .logo-dark{display:none}
 @media(min-width:760px){.brand-mark{height:52px}}
-.brand-text{display:flex; flex-direction:column; line-height:1.15; min-width:0; padding-left:12px; border-left:1px solid rgba(255,255,255,.18)}
+.brand-text{display:flex; flex-direction:column; line-height:1.15; min-width:0; padding-left:10px; border-left:1px solid rgba(255,255,255,.18); overflow:hidden; flex:1}
 @media(min-width:760px){.brand-text{padding-left:14px}}
-.brand-name{font-family:var(--font-display); font-weight:600; font-size:13px; color:#fff; text-shadow:0 1px 6px rgba(0,0,0,.3); letter-spacing:-.01em; line-height:1.1}
-.brand-sub{font-size:9px; letter-spacing:.12em; text-transform:uppercase; color:rgba(255,255,255,.7); font-weight:500; margin-top:3px; white-space:nowrap}
+.brand-name{font-family:var(--font-display); font-weight:600; font-size:11px; color:#fff; text-shadow:0 1px 6px rgba(0,0,0,.5); letter-spacing:-.01em; line-height:1.15}
+.brand-sub{display:block; font-size:8px; letter-spacing:.10em; text-transform:uppercase; color:rgba(255,255,255,.85); font-weight:600; margin-top:3px; white-space:nowrap; text-shadow:0 1px 4px rgba(0,0,0,.5)}
+@media(min-width:380px){
+  .brand-name{font-size:12px}
+  .brand-sub{font-size:9px; letter-spacing:.12em}
+}
 .nav{display:none; gap:32px; align-items:center}
 .nav a{font-size:14px; font-weight:500; color:var(--ink-700); transition:color var(--dur-fast)}
 .nav a:hover{color:var(--teal-700)}
-.header .btn{padding:11px 18px; font-size:13px}
+.header .btn{padding:8px 12px; font-size:11px; flex-shrink:0; white-space:nowrap}
 .header .btn svg{display:none}
+.header .btn .btn-long{display:none}
+@media(min-width:380px){
+  .header .btn{padding:9px 14px; font-size:12px}
+}
+@media(min-width:480px){
+  .header .btn{padding:10px 16px; font-size:13px}
+  .header .btn .btn-long{display:inline}
+}
 @media(min-width:760px){
   .brand-name{font-size:18px}
   .brand-sub{font-size:11px}
@@ -297,7 +310,7 @@ p{margin:0}
   line-height:1; letter-spacing:-.02em;
 }
 .trust-label{font-size:9.5px; color:rgba(255,255,255,.82); line-height:1.25; text-wrap:pretty}
-.trust-label br{display:none}
+.trust-label br{display:inline}
 
 @media(min-width:760px){
   .hero{padding:140px 0 80px; min-height:0}
@@ -774,16 +787,18 @@ section{padding:64px 0; position:relative}
 .final::after{bottom:-200px; left:-200px; width:500px; height:500px; background:radial-gradient(circle, rgba(30,168,143,.16), transparent 60%)}
 
 .final .container{position:relative; z-index:2}
-.final-grid{display:grid; gap:48px; grid-template-columns:1fr; align-items:center}
+.final-grid{display:grid; gap:48px; grid-template-columns:1fr; align-items:center; min-width:0}
+.final-grid > *{min-width:0; max-width:100%}
 @media(min-width:960px){.final-grid{grid-template-columns:1.05fr .95fr; gap:64px}}
 
-.final h2{color:#fff; font-size:clamp(28px,3.8vw,46px); font-weight:500; margin-bottom:20px; text-wrap:balance}
+.final h2{color:#fff; font-size:clamp(26px,3.8vw,46px); font-weight:500; margin-bottom:20px; text-wrap:balance; word-wrap:break-word; hyphens:auto}
 .final h2 em{font-style:italic; color:var(--teal-300); font-weight:600}
-.final-lead{font-size:18px; color:rgba(255,255,255,.85); margin-bottom:28px; max-width:520px; text-wrap:pretty}
-.final-bullets{display:flex; flex-direction:column; gap:12px; margin-bottom:32px}
-.final-bullets li{display:flex; align-items:flex-start; gap:12px; font-size:15px; color:rgba(255,255,255,.92)}
+.final-lead{font-size:clamp(15px,2.5vw,18px); line-height:1.55; color:rgba(255,255,255,.85); margin-bottom:28px; max-width:520px; text-wrap:pretty; word-wrap:break-word}
+.final-bullets{display:flex; flex-direction:column; gap:12px; margin-bottom:32px; max-width:100%; list-style:none; padding:0}
+.final-bullets li{position:relative; padding-left:32px; font-size:clamp(14px,2.4vw,15px); color:rgba(255,255,255,.92); line-height:1.5}
 .final-bullets li::before{
-  content:""; width:20px; height:20px; flex-shrink:0; margin-top:2px;
+  content:""; position:absolute; left:0; top:2px;
+  width:20px; height:20px; flex-shrink:0;
   border-radius:50%; background:var(--teal-300);
   background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230a4f47' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'><polyline points='20 6 9 17 4 12'/></svg>");
   background-size:14px; background-repeat:no-repeat; background-position:center;
@@ -795,6 +810,10 @@ section{padding:64px 0; position:relative}
   font-size:13px; font-weight:600; color:#fff;
   border:1px solid rgba(255,255,255,.18);
   margin-bottom:20px;
+  max-width:100%;
+}
+@media(max-width:480px){
+  .urgency-pill{font-size:11px; padding:6px 12px}
 }
 .urgency-pill .pulse{
   width:8px; height:8px; border-radius:50%; background:var(--teal-300);
@@ -1039,7 +1058,7 @@ body[data-hero="glow"] .hero-photo::after{
       <a href="#diferenciais">Tratamento</a>
     </nav>
     <a href="#contato" class="btn btn-primary" data-cta="header">
-      Agendar avaliação
+      <span class="btn-short">Agendar</span><span class="btn-long"> avaliação</span>
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
     </a>
   </div>
@@ -1627,7 +1646,7 @@ body[data-hero="glow"] .hero-photo::after{
           <li><a href="mailto:contato@drjoaquim.com.br">contato@drjoaquim.com.br</a></li>
         </ul>
         <h5 style="margin-top:24px">Endereço</h5>
-        <p>EPAO<br/>Av. dos Holandeses, Q-10, Lt-01, N° 01<br/>Calhau · São Luís — MA</p>
+        <p>GON. Odontologia<br/>Av. dos Holandeses, Q-10, L-01, N° 01<br/>Calhau · São Luís — MA</p>
       </div>
 
       <div>
@@ -1640,12 +1659,17 @@ body[data-hero="glow"] .hero-photo::after{
           <li><a href="#contato">Agendar avaliação</a></li>
         </ul>
         <h5 style="margin-top:24px">Legal</h5>
-        <p>CRO-MA · Responsável Técnico<br/>Dr. Joaquim Gonçalves Neto — CRO/MA 0000</p>
+        <p>
+          GON. Odontologia<br/>
+          EPAO: 155<br/>
+          Responsável Técnico: Dr. Joaquim Gonçalves Neto<br/>
+          CRO-MA 998
+        </p>
       </div>
     </div>
 
     <div class="footer-bottom">
-      <span>© 2026 Dr. Joaquim Gonçalves Neto · Todos os direitos reservados.</span>
+      <span>© 2026 GON. Odontologia · Dr. Joaquim Gonçalves Neto · Todos os direitos reservados.</span>
       <span>Atendimento conforme normas do CFO · Resolução CFO-118/2012</span>
     </div>
   </div>
