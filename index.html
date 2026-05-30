@@ -4,21 +4,23 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
 <meta name="theme-color" content="#0e7a6b" />
-<title>Dr. Joaquim Gonçalves Neto Gonçalves — Ortodontia de Referência Nacional · Sorriso perfeito em menos tempo</title>
-<meta name="description" content="Sistemas autoligados passivos de última geração com Dr. Joaquim Gonçalves Neto, precursor do Damon Ultima no Brasil. Avaliação personalizada — agende sua consulta." />
+<title>Dr. Joaquim Gonçalves Neto — Ortodontia de Referência Nacional · Sorriso perfeito em menos tempo</title>
+<meta name="description" content="Sistemas autoligados passivos de última geração com Dr. Joaquim Gonçalves Neto, um dos precursores do Damon Ultima no Brasil. Avaliação personalizada — agende sua consulta." />
 <meta name="robots" content="index,follow" />
 
 <!-- Open Graph -->
 <meta property="og:type" content="website" />
 <meta property="og:title" content="Dr. Joaquim Gonçalves Neto — Ortodontia de Referência Nacional" />
-<meta property="og:description" content="Sorriso perfeito em menos tempo com tecnologia internacional de ponta. +15 anos · Presidente CRO-MA · Speaker Internacional." />
+<meta property="og:description" content="Sorriso perfeito em menos tempo com tecnologia internacional de ponta. +18 anos · Ex-Presidente CRO-MA · Speaker Internacional." />
 <meta property="og:image" content="assets/dr-joaquim-jaleco.jpg" />
 
-<!-- Google Analytics placeholder — replace G-XXXXXXXXXX -->
-<!--
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XXXXXXXXXX');</script>
--->
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-WJ37LDXT');</script>
+<!-- End Google Tag Manager -->
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -178,10 +180,18 @@ p{margin:0}
 .brand-text{display:flex; flex-direction:column; line-height:1.15; min-width:0; padding-left:10px; border-left:1px solid rgba(255,255,255,.18); overflow:hidden; flex:1}
 @media(min-width:760px){.brand-text{padding-left:14px}}
 .brand-name{font-family:var(--font-display); font-weight:600; font-size:11px; color:#fff; text-shadow:0 1px 6px rgba(0,0,0,.5); letter-spacing:-.01em; line-height:1.15}
-.brand-sub{display:block; font-size:8px; letter-spacing:.10em; text-transform:uppercase; color:rgba(255,255,255,.85); font-weight:600; margin-top:3px; white-space:nowrap; text-shadow:0 1px 4px rgba(0,0,0,.5)}
+.brand-sub{display:block; font-size:8px; letter-spacing:.06em; text-transform:uppercase; color:rgba(255,255,255,.85); font-weight:600; margin-top:3px; white-space:nowrap; text-shadow:0 1px 4px rgba(0,0,0,.5)}
+.brand-sub-area{display:none}
 @media(min-width:380px){
   .brand-name{font-size:12px}
-  .brand-sub{font-size:9px; letter-spacing:.12em}
+  .brand-sub{font-size:8.5px; letter-spacing:.04em}
+  .brand-sub-area{display:inline}
+}
+@media(min-width:430px){
+  .brand-sub{font-size:9px; letter-spacing:.08em}
+}
+@media(min-width:480px){
+  .brand-sub{font-size:9.5px; letter-spacing:.10em}
 }
 .nav{display:none; gap:32px; align-items:center}
 .nav a{font-size:14px; font-weight:500; color:var(--ink-700); transition:color var(--dur-fast)}
@@ -1037,6 +1047,10 @@ body[data-hero="glow"] .hero-photo::after{
 </style>
 </head>
 <body data-accent="mint" data-hero="split">
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WJ37LDXT"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 
 <!-- ═══════════ HEADER ═══════════ -->
 <header class="header" id="header">
@@ -1048,7 +1062,7 @@ body[data-hero="glow"] .hero-photo::after{
       </div>
       <div class="brand-text">
         <span class="brand-name">Dr. Joaquim Gonçalves Neto</span>
-        <span class="brand-sub">Ortodontia · CRO-MA</span>
+        <span class="brand-sub"><span class="brand-sub-area">Ortodontia · </span>CRO-MA 998</span>
       </div>
     </a>
     <nav class="nav" aria-label="Navegação principal">
@@ -1096,7 +1110,7 @@ body[data-hero="glow"] .hero-photo::after{
           Quero corrigir meu sorriso agora
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
         </a>
-        <a href="https://wa.me/5598987038714?text=Quero%20saber%20mais%20sobre%20aparelho%20ortodôntico" class="btn btn-ghost" data-cta="hero-whatsapp" target="_blank" rel="noopener">
+        <a href="https://wa.me/5598987038714?text=Quero%20saber%20mais%20sobre%20aparelho%20ortodôntico" class="btn btn-ghost" data-cta="hero-whatsapp" target="_blank" rel="noopener" onclick="window.dataLayer = window.dataLayer || []; window.dataLayer.push({'event':'clique_whatsapp_drjoaquim','local_clique':'aparelho_hero_whatsapp'});">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.2-.7.2-.2.3-.8.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.4-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5-.1-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 1.9-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.3zM12 2a10 10 0 0 0-8.5 15.3L2 22l4.8-1.5A10 10 0 1 0 12 2z"/></svg>
           Falar no WhatsApp
         </a>
@@ -1621,7 +1635,7 @@ body[data-hero="glow"] .hero-photo::after{
           <div class="brand-mark"><img class="logo-light" src="assets/logo-gon-white.png" alt="GON." /></div>
           <div class="brand-text">
             <span class="brand-name">Dr. Joaquim Gonçalves Neto</span>
-            <span class="brand-sub">Ortodontia · CRO-MA</span>
+            <span class="brand-sub"><span class="brand-sub-area">Ortodontia · </span>CRO-MA 998</span>
           </div>
         </div>
         <p class="footer-tag">Ortodontia de referência nacional. Sistemas autoligados passivos com tecnologia internacional, conduzidos pessoalmente pelo Dr. Joaquim Gonçalves Neto.</p>
@@ -1641,8 +1655,8 @@ body[data-hero="glow"] .hero-photo::after{
       <div>
         <h5>Contato</h5>
         <ul>
-          <li><a href="tel:+5598900000000">(98) 9 0000-0000</a></li>
-          <li><a href="https://wa.me/5598900000000">WhatsApp direto</a></li>
+          <li><a href="tel:+5598987038714">(98) 9 0000-0000</a></li>
+          <li><a href="https://wa.me/5598987038714" onclick="window.dataLayer = window.dataLayer || []; window.dataLayer.push({'event':'clique_whatsapp_drjoaquim','local_clique':'aparelho_footer_whatsapp'});">WhatsApp direto</a></li>
           <li><a href="mailto:contato@drjoaquim.com.br">contato@drjoaquim.com.br</a></li>
         </ul>
         <h5 style="margin-top:24px">Endereço</h5>
@@ -1676,7 +1690,7 @@ body[data-hero="glow"] .hero-photo::after{
 </footer>
 
 <!-- ═══════════ WHATSAPP FLUTUANTE ═══════════ -->
-<a href="https://wa.me/5598900000000?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o" class="wa-float" aria-label="Fale conosco no WhatsApp" data-cta="whatsapp-float" target="_blank" rel="noopener">
+<a href="https://wa.me/5598987038714?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o" class="wa-float" aria-label="Fale conosco no WhatsApp" data-cta="whatsapp-float" target="_blank" rel="noopener" onclick="window.dataLayer = window.dataLayer || []; window.dataLayer.push({'event':'clique_whatsapp_drjoaquim','local_clique':'aparelho_whatsapp_flutuante'});">
   <svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.2-.7.2-.2.3-.8.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.4-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5-.1-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 1.9-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.3zM12 2a10 10 0 0 0-8.5 15.3L2 22l4.8-1.5A10 10 0 1 0 12 2z"/></svg>
 </a>
 
@@ -1898,6 +1912,8 @@ _Gostaria de agendar uma avaliação personalizada._`;
 
     // Redirecionar para WhatsApp
     const whatsappUrl = `https://wa.me/5598987038714?text=${encodeURIComponent(mensagem)}`;
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({'event':'clique_whatsapp_drjoaquim','local_clique':'aparelho_formulario_final'});
     window.open(whatsappUrl, '_blank');
 
     // Mostrar mensagem de sucesso
