@@ -1,0 +1,2272 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Invisalign — Dr. Joaquim Gonçalves Neto | Ortodontia Digital em São Luís - MA</title>
+<meta name="description" content="Alinhadores transparentes Invisalign em São Luís - MA. Tratamento ortodôntico 100% digital com Dr. Joaquim Gonçalves Neto.">
+
+<meta property="og:title" content="Invisalign — Dr. Joaquim Gonçalves Neto">
+<meta property="og:description" content="Alinhadores transparentes que ninguém vê. Tecnologia digital de ponta com Dr. Joaquim Gonçalves Neto.">
+<meta property="og:type" content="website">
+
+<!-- GTM -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-WJ37LDXT');</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  /* PALETA OFICIAL DAS OUTRAS LPs */
+  --teal-900:#0a4f47;
+  --teal-700:#0e7a6b;
+  --teal-500:#1ea88f;
+  --teal-300:#7dd3c0;
+  --teal-100:#d6f1ea;
+  --teal-50:#eaf7f3;
+  --ink-900:#0f1f2a;
+  --ink-700:#2c3e50;
+  --ink-500:#56697a;
+  --ink-300:#94a3b8;
+  --ink-100:#e2e8f0;
+  --bg:#fafdfc;
+  --bg-dark:#02100e;
+  --font-display:'Fraunces',Georgia,serif;
+  --font-body:'Inter',system-ui,sans-serif;
+  --r-sm:8px; --r-md:14px; --r-lg:20px; --r-pill:999px;
+  --max:1200px;
+  --dur-fast:.18s;
+  --ease-out:cubic-bezier(.22,1,.36,1);
+  --ease-spring:cubic-bezier(.34,1.4,.64,1);
+}
+
+*{box-sizing:border-box; margin:0; padding:0}
+html{scroll-behavior:smooth; -webkit-text-size-adjust:100%}
+body{
+  font-family:var(--font-body);
+  background:var(--bg);
+  color:var(--ink-700);
+  line-height:1.55;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+  font-size:15px;
+}
+img{max-width:100%; display:block}
+a{color:inherit; text-decoration:none}
+button{font:inherit; cursor:pointer; border:0; background:none; color:inherit}
+input,select,textarea{font:inherit; color:inherit}
+
+h1,h2,h3,h4{font-family:var(--font-display); font-weight:500; color:var(--ink-900); margin:0; letter-spacing:-.02em; line-height:1.1}
+
+.container{max-width:var(--max); margin:0 auto; padding:0 16px}
+@media(min-width:760px){.container{padding:0 28px}}
+
+/* ═══════ HEADER FIXO ═══════ */
+.header{
+  position:fixed; top:0; left:0; right:0; z-index:100;
+  padding:10px 16px;
+  background:linear-gradient(180deg, rgba(10,79,71,.95), rgba(10,79,71,.7));
+  backdrop-filter:blur(12px);
+  -webkit-backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+.header-inner{
+  max-width:var(--max);
+  margin:0 auto;
+  display:flex; justify-content:space-between; align-items:center;
+  gap:10px;
+}
+.brand{display:flex; align-items:center; gap:10px; min-width:0; flex:1}
+.brand-mark{
+  display:flex; align-items:center;
+  height:28px;
+  flex-shrink:0;
+}
+.brand-mark img{
+  height:100%; width:auto; display:block;
+  filter:brightness(0) invert(1);
+}
+@media(min-width:760px){.brand-mark{height:48px}}
+.brand-text{
+  display:flex; flex-direction:column; line-height:1.15;
+  min-width:0; padding-left:10px;
+  border-left:1px solid rgba(255,255,255,.18);
+  overflow:hidden;
+}
+@media(min-width:760px){.brand-text{padding-left:14px}}
+.brand-name{
+  font-family:var(--font-display); font-weight:600;
+  font-size:11px; color:#fff;
+  text-shadow:0 1px 6px rgba(0,0,0,.5);
+  letter-spacing:-.01em; line-height:1.15;
+}
+.brand-sub{
+  display:block; font-size:8px; letter-spacing:.06em;
+  text-transform:uppercase; color:rgba(255,255,255,.85);
+  font-weight:600; margin-top:3px; white-space:nowrap;
+  text-shadow:0 1px 4px rgba(0,0,0,.5);
+}
+.brand-sub-area{display:none}
+@media(min-width:380px){
+  .brand-name{font-size:12px}
+  .brand-sub{font-size:8.5px; letter-spacing:.04em}
+  .brand-sub-area{display:inline}
+}
+@media(min-width:430px){.brand-sub{font-size:9px; letter-spacing:.08em}}
+@media(min-width:480px){.brand-sub{font-size:9.5px; letter-spacing:.10em}}
+@media(min-width:760px){
+  .brand-name{font-size:16px}
+  .brand-sub{font-size:11px; letter-spacing:.12em}
+}
+
+.btn{
+  display:inline-flex; align-items:center; justify-content:center; gap:8px;
+  padding:12px 22px;
+  border-radius:var(--r-pill);
+  background:var(--teal-500); color:#fff;
+  font-weight:600; font-size:13px;
+  text-decoration:none;
+  transition:transform .25s var(--ease-spring), background .25s var(--ease-out), box-shadow .25s var(--ease-out);
+  cursor:pointer; border:none;
+  box-shadow:0 8px 24px rgba(30,168,143,.28), 0 2px 6px rgba(14,122,107,.18);
+}
+.btn:hover{
+  background:var(--teal-700);
+  transform:translateY(-2px);
+  box-shadow:0 14px 32px rgba(30,168,143,.36);
+}
+.btn-ghost{
+  background:rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.22);
+  backdrop-filter:blur(8px);
+  box-shadow:none;
+}
+.btn-ghost:hover{background:rgba(255,255,255,.16); box-shadow:none}
+.btn-outline{
+  background:transparent;
+  color:var(--teal-700);
+  border:1.5px solid var(--teal-500);
+  box-shadow:none;
+}
+.btn-outline:hover{background:var(--teal-50); transform:translateY(-2px); box-shadow:none}
+.header .btn{padding:8px 14px; font-size:12px; flex-shrink:0}
+.header .btn .btn-long{display:none}
+@media(min-width:480px){
+  .header .btn{padding:10px 16px; font-size:13px}
+  .header .btn .btn-long{display:inline}
+}
+
+/* ═══════ HERO ═══════ */
+.hero{
+  position:relative;
+  min-height:100vh;
+  display:flex; align-items:center;
+  padding:80px 16px 30px;
+  background:linear-gradient(180deg, #0a4f47 0%, #0e7a6b 60%, #062420 100%);
+  overflow:hidden;
+  color:#fff;
+}
+
+/* Foto do Dr. como fundo do hero — ocupa toda a layer */
+.hero-bg-image{
+  position:absolute;
+  inset:0;
+  z-index:0;
+  pointer-events:none;
+  overflow:hidden;
+}
+.hero-bg-image img{
+  position:absolute;
+  right:0;
+  bottom:0;
+  width:100%;
+  height:100%;
+  max-width:none;
+  object-fit:cover;
+  object-position:center 15%;
+  opacity:.85;
+}
+@media(min-width:600px){
+  .hero-bg-image img{object-position:60% 15%; opacity:.90}
+}
+@media(min-width:880px){
+  .hero-bg-image img{object-position:65% 18%; opacity:.95}
+}
+@media(min-width:1200px){
+  .hero-bg-image img{object-position:70% 20%}
+}
+
+/* Overlay MODERADO - só escurece o suficiente pro texto ficar legível */
+.hero-overlay{
+  position:absolute; inset:0;
+  z-index:1;
+  background:
+    linear-gradient(180deg, rgba(10,79,71,.55) 0%, rgba(10,79,71,.35) 30%, rgba(10,79,71,.45) 70%, rgba(6,36,32,.75) 100%),
+    radial-gradient(70% 50% at 30% 50%, rgba(10,79,71,.35), transparent 70%);
+  pointer-events:none;
+}
+@media(min-width:880px){
+  .hero-overlay{
+    background:
+      linear-gradient(90deg, rgba(10,79,71,.78) 0%, rgba(10,79,71,.55) 35%, rgba(10,79,71,.20) 65%, rgba(10,79,71,.30) 100%),
+      radial-gradient(60% 50% at 30% 50%, rgba(10,79,71,.30), transparent 70%);
+  }
+}
+
+.hero::after{
+  content:""; position:absolute; inset:0;
+  background:radial-gradient(ellipse at center bottom, transparent 30%, rgba(2,16,14,.5) 100%);
+  pointer-events:none;
+  z-index:2;
+}
+.hero-container{
+  position:relative; z-index:3;
+  max-width:var(--max);
+  margin:0 auto;
+  width:100%;
+  display:flex; flex-direction:column;
+  gap:24px; align-items:center;
+  text-align:center;
+}
+@media(min-width:880px){
+  .hero-container{
+    display:block;
+    text-align:left;
+    max-width:560px;
+    margin:0;
+    padding-left:40px;
+  }
+}
+@media(min-width:1200px){
+  .hero-container{padding-left:60px}
+}
+.hero-copy{position:relative; z-index:3; width:100%}
+.eyebrow{
+  display:inline-block;
+  font-size:10px;
+  font-weight:700;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:var(--teal-300);
+  background:rgba(125,211,192,.14);
+  padding:6px 12px;
+  border-radius:var(--r-pill);
+  border:1px solid rgba(125,211,192,.22);
+  margin-bottom:18px;
+}
+@media(min-width:480px){.eyebrow{font-size:11px}}
+.hero h1{
+  font-family:var(--font-display);
+  font-size:clamp(30px,7vw,60px);
+  font-weight:500;
+  line-height:1.05;
+  letter-spacing:-.02em;
+  margin-bottom:18px;
+  color:#fff;
+  text-wrap:balance;
+}
+.hero h1 em{font-style:italic; color:var(--teal-300); font-weight:500}
+.hero p.lead{
+  font-size:15px;
+  color:rgba(255,255,255,.82);
+  margin-bottom:26px;
+  line-height:1.55;
+}
+@media(min-width:480px){.hero p.lead{font-size:16px}}
+@media(min-width:880px){.hero p.lead{font-size:18px; max-width:520px}}
+.hero-cta{
+  display:flex; gap:10px; flex-wrap:wrap;
+  margin-bottom:30px;
+  justify-content:center;
+}
+@media(min-width:880px){.hero-cta{justify-content:flex-start}}
+.hero-cta .btn{flex:1; min-width:140px}
+@media(min-width:480px){.hero-cta .btn{flex:0 0 auto}}
+.hero-stats{
+  display:flex; gap:14px; flex-wrap:wrap;
+  justify-content:center;
+  padding:18px 16px;
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:var(--r-md);
+  backdrop-filter:blur(8px);
+}
+@media(min-width:880px){.hero-stats{justify-content:flex-start; gap:32px; padding:20px 24px}}
+.stat{flex:1; min-width:80px; text-align:center}
+@media(min-width:880px){.stat{text-align:left}}
+.stat-num{
+  font-family:var(--font-display);
+  font-size:clamp(20px,4vw,30px);
+  font-weight:600;
+  color:var(--teal-300);
+  display:block;
+  line-height:1;
+}
+.stat-label{
+  font-size:10px;
+  color:rgba(255,255,255,.7);
+  margin-top:5px;
+  letter-spacing:.04em;
+  line-height:1.3;
+}
+@media(min-width:480px){.stat-label{font-size:11px}}
+
+/* HERO VISUAL - foto do Dr. com a caixa */
+.hero-visual{
+  position:relative;
+  width:100%;
+  display:flex; align-items:center; justify-content:center;
+}
+.hero-img-wrap{
+  position:relative;
+  width:100%;
+  max-width:420px;
+  aspect-ratio:4/5;
+  border-radius:var(--r-lg);
+  overflow:hidden;
+  box-shadow:0 30px 80px rgba(0,0,0,.4), 0 10px 30px rgba(30,168,143,.25);
+}
+@media(min-width:880px){.hero-img-wrap{max-width:480px}}
+.hero-img-wrap img{
+  width:100%; height:100%;
+  object-fit:cover;
+}
+.hero-img-wrap::after{
+  content:""; position:absolute; inset:0;
+  background:linear-gradient(180deg, transparent 50%, rgba(10,79,71,.35) 100%);
+  pointer-events:none;
+}
+.hero-img-badge{
+  position:absolute;
+  bottom:16px; left:16px; right:16px;
+  background:rgba(255,255,255,.95);
+  backdrop-filter:blur(10px);
+  padding:14px 18px;
+  border-radius:var(--r-md);
+  display:flex; align-items:center; gap:12px;
+  z-index:2;
+}
+.hero-img-badge-icon{
+  width:36px; height:36px;
+  border-radius:50%;
+  background:var(--teal-500);
+  color:#fff;
+  display:flex; align-items:center; justify-content:center;
+  flex-shrink:0;
+}
+.hero-img-badge-text{
+  flex:1; min-width:0;
+}
+.hero-img-badge-text strong{
+  display:block;
+  font-size:13px;
+  font-weight:700;
+  color:var(--ink-900);
+  font-family:var(--font-display);
+  line-height:1.2;
+}
+.hero-img-badge-text span{
+  font-size:11px;
+  color:var(--ink-500);
+  line-height:1.3;
+}
+
+/* ═══════ TRANSIÇÃO 3D ═══════ */
+.transition-section{
+  position:relative;
+  height:280vh;
+  background:linear-gradient(180deg, #062420 0%, #041814 50%, #02100e 100%);
+}
+.transition-sticky{
+  position:sticky;
+  top:0;
+  height:100vh;
+  width:100%;
+  display:flex; align-items:center; justify-content:center;
+  overflow:hidden;
+}
+.transition-bg{
+  position:absolute; inset:0;
+  background:
+    radial-gradient(circle at 50% 50%, rgba(30,168,143,.20), transparent 60%),
+    radial-gradient(circle at 20% 80%, rgba(125,211,192,.10), transparent 60%);
+  z-index:1;
+}
+.transition-text{
+  position:absolute;
+  bottom:8%;
+  left:0; right:0;
+  padding:0 20px;
+  z-index:4;
+  pointer-events:none;
+  text-align:center;
+}
+.transition-text-inner{
+  opacity:0;
+  transform:translateY(30px);
+  transition:opacity .8s ease, transform .8s ease;
+  max-width:520px;
+  margin:0 auto;
+}
+.transition-text-inner.active{opacity:1; transform:translateY(0)}
+.transition-text h2{
+  font-family:var(--font-display);
+  font-size:clamp(22px,5vw,38px);
+  font-weight:500;
+  color:#fff;
+  margin-bottom:12px;
+  letter-spacing:-.01em;
+  line-height:1.1;
+  text-wrap:balance;
+}
+.transition-text h2 em{font-style:italic; color:var(--teal-300); font-weight:500}
+.transition-text p{
+  font-size:13px;
+  color:rgba(255,255,255,.78);
+  line-height:1.55;
+}
+@media(min-width:480px){.transition-text p{font-size:14px}}
+.rotating-stage{
+  position:relative;
+  width:clamp(220px, 70vw, 480px);
+  height:clamp(220px, 70vw, 480px);
+  z-index:2;
+  perspective:1500px;
+  perspective-origin:center center;
+  will-change:transform;
+}
+.layer-box-stage{
+  position:absolute; inset:0;
+  display:flex; align-items:center; justify-content:center;
+  will-change:transform, opacity;
+  transform-origin:center center;
+}
+.layer-box-stage img{
+  width:100%; height:100%;
+  object-fit:contain;
+  filter: drop-shadow(0 20px 40px rgba(0,0,0,.5));
+}
+.layer-aligner-stage{
+  position:absolute; inset:0;
+  display:flex; align-items:center; justify-content:center;
+  will-change:transform, opacity;
+  transform-style:preserve-3d;
+}
+.layer-aligner-stage img{
+  width:100%; height:100%;
+  object-fit:contain;
+  filter: drop-shadow(0 20px 40px rgba(125,211,192,.5));
+}
+.object-glow{
+  position:absolute;
+  bottom:-30px; left:50%;
+  width:60%; height:30px;
+  background:radial-gradient(ellipse at center, rgba(125,211,192,.4), transparent 70%);
+  transform:translateX(-50%);
+  filter:blur(20px);
+  z-index:1;
+  pointer-events:none;
+}
+.scroll-hint{
+  position:absolute;
+  bottom:24px;
+  left:50%;
+  transform:translateX(-50%);
+  z-index:5;
+  color:rgba(255,255,255,.55);
+  font-size:10px;
+  text-transform:uppercase;
+  letter-spacing:.18em;
+  font-weight:600;
+  display:flex; flex-direction:column; align-items:center; gap:8px;
+  animation:bounce 2.5s ease-in-out infinite;
+  pointer-events:none;
+}
+@keyframes bounce{
+  0%, 100% { transform:translate(-50%, 0); opacity:.6 }
+  50% { transform:translate(-50%, 6px); opacity:1 }
+}
+.scroll-hint svg{width:20px; height:20px}
+
+/* ═══════ AUTORIDADE (Dr. Joaquim) — Foto como fundo ═══════ */
+.autoridade{
+  position:relative;
+  padding:80px 0 80px;
+  background:var(--bg);
+  overflow:hidden;
+  min-height:600px;
+}
+@media(min-width:760px){.autoridade{padding:120px 0 100px; min-height:700px}}
+
+/* Foto do Dr. como BG full-width — VISÍVEL */
+.autoridade-bg-image{
+  position:absolute;
+  inset:0;
+  z-index:0;
+  pointer-events:none;
+  overflow:hidden;
+}
+.autoridade-bg-image img{
+  position:absolute;
+  right:-10%;
+  bottom:0;
+  width:auto;
+  height:108%;
+  max-width:none;
+  object-fit:contain;
+  object-position:right bottom;
+  opacity:1;
+}
+@media(min-width:600px){
+  .autoridade-bg-image img{right:-5%; height:110%}
+}
+@media(min-width:880px){
+  .autoridade-bg-image img{right:0; height:115%}
+}
+@media(min-width:1200px){
+  .autoridade-bg-image img{right:5%}
+}
+/* Véu LEVE só pro lado do texto - Dr. fica VISÍVEL */
+.autoridade-overlay{
+  position:absolute; inset:0;
+  background:
+    linear-gradient(90deg, rgba(250,253,252,.95) 0%, rgba(250,253,252,.80) 35%, rgba(250,253,252,.20) 60%, transparent 100%),
+    radial-gradient(50% 40% at 100% 0%, rgba(125,211,192,.10), transparent 60%),
+    radial-gradient(40% 30% at 0% 100%, rgba(30,168,143,.06), transparent 60%);
+  z-index:1;
+}
+@media(min-width:880px){
+  .autoridade-overlay{
+    background:
+      linear-gradient(90deg, rgba(250,253,252,.98) 0%, rgba(250,253,252,.90) 30%, rgba(250,253,252,.20) 55%, transparent 100%),
+      radial-gradient(50% 40% at 100% 0%, rgba(125,211,192,.10), transparent 60%);
+  }
+}
+
+.autoridade-container{
+  position:relative; z-index:2;
+  max-width:var(--max);
+  margin:0 auto;
+  padding:0 16px;
+}
+@media(min-width:760px){.autoridade-container{padding:0 28px}}
+
+.autoridade-copy{
+  position:relative; z-index:2;
+  max-width:560px;
+}
+.autoridade-eyebrow{
+  display:inline-block;
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:var(--teal-700);
+  margin-bottom:14px;
+}
+.autoridade h2{
+  font-size:clamp(26px,5vw,44px);
+  margin-bottom:18px;
+  text-wrap:balance;
+  color:var(--ink-900);
+}
+.autoridade h2 em{
+  font-style:italic;
+  color:var(--teal-700);
+  font-weight:500;
+}
+.autoridade-lead{
+  font-size:14px;
+  color:var(--ink-700);
+  margin-bottom:20px;
+  line-height:1.65;
+}
+@media(min-width:480px){.autoridade-lead{font-size:15px}}
+@media(min-width:760px){.autoridade-lead{font-size:16px}}
+.autoridade-bullets{
+  list-style:none; padding:0; margin:0 0 22px;
+  display:flex; flex-direction:column; gap:10px;
+}
+.autoridade-bullets li{
+  position:relative;
+  padding-left:32px;
+  font-size:13px;
+  line-height:1.5;
+  color:var(--ink-700);
+}
+@media(min-width:480px){.autoridade-bullets li{font-size:14px}}
+@media(min-width:760px){.autoridade-bullets li{font-size:15px}}
+.autoridade-bullets li::before{
+  content:"";
+  position:absolute; left:0; top:2px;
+  width:20px; height:20px;
+  border-radius:50%;
+  background:var(--teal-500);
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'><polyline points='20 6 9 17 4 12'/></svg>");
+  background-size:12px;
+  background-repeat:no-repeat;
+  background-position:center;
+}
+.autoridade-bullets li strong{color:var(--ink-900); font-weight:700}
+.autoridade-credentials-inline{
+  display:inline-flex;
+  align-items:baseline;
+  gap:6px;
+  padding:8px 14px;
+  background:#fff;
+  border:1px solid var(--teal-300);
+  border-radius:var(--r-pill);
+  margin-bottom:20px;
+  font-size:12px;
+  font-weight:700;
+  color:var(--ink-900);
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  box-shadow:0 4px 14px rgba(30,168,143,.12);
+}
+.autoridade-credentials-inline span{
+  color:var(--teal-700);
+  font-size:14px;
+}
+
+/* ═══════ BENEFÍCIOS ═══════ */
+.benefits{
+  padding:70px 0 60px;
+  background:var(--bg);
+  position:relative;
+}
+.benefits::before{
+  content:""; position:absolute;
+  inset:0;
+  background:linear-gradient(180deg, var(--teal-50) 0%, transparent 100%);
+  pointer-events:none;
+}
+@media(min-width:760px){.benefits{padding:100px 0 80px}}
+.section-head{
+  text-align:center;
+  max-width:720px;
+  margin:0 auto 40px;
+  padding:0 16px;
+  position:relative;
+  z-index:1;
+}
+.section-eyebrow{
+  display:inline-block;
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:var(--teal-700);
+  margin-bottom:12px;
+}
+.section-head h2{
+  font-size:clamp(26px,5vw,46px);
+  font-weight:500;
+  letter-spacing:-.01em;
+  line-height:1.1;
+  color:var(--ink-900);
+  margin-bottom:12px;
+  text-wrap:balance;
+}
+.section-head h2 em{font-style:italic; color:var(--teal-700); font-weight:500}
+.section-head p{
+  font-size:14px;
+  color:var(--ink-500);
+  max-width:520px; margin:0 auto;
+  line-height:1.55;
+}
+@media(min-width:480px){.section-head p{font-size:15px}}
+.benefits-grid{
+  max-width:1100px;
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:1fr;
+  gap:14px;
+  padding:0 16px;
+  position:relative;
+  z-index:1;
+}
+@media(min-width:600px){.benefits-grid{grid-template-columns:1fr 1fr; gap:16px}}
+@media(min-width:960px){.benefits-grid{grid-template-columns:repeat(3, 1fr); gap:20px}}
+.benefit-card{
+  background:#fff;
+  border:1px solid var(--ink-100);
+  border-radius:var(--r-lg);
+  padding:22px 20px;
+  transition:transform .35s var(--ease-spring), border-color .35s, box-shadow .35s;
+}
+@media(min-width:760px){.benefit-card{padding:28px 24px}}
+.benefit-card:hover{
+  transform:translateY(-4px);
+  border-color:var(--teal-300);
+  box-shadow:0 14px 32px rgba(30,168,143,.10);
+}
+.benefit-icon{
+  width:44px; height:44px;
+  border-radius:12px;
+  background:linear-gradient(135deg, var(--teal-100), var(--teal-50));
+  display:flex; align-items:center; justify-content:center;
+  margin-bottom:14px;
+  color:var(--teal-700);
+}
+.benefit-icon svg{width:22px; height:22px}
+.benefit-card h3{
+  font-size:18px;
+  font-weight:500;
+  color:var(--ink-900);
+  margin-bottom:6px;
+}
+@media(min-width:760px){.benefit-card h3{font-size:20px}}
+.benefit-card p{
+  font-size:13px;
+  color:var(--ink-500);
+  line-height:1.55;
+}
+@media(min-width:480px){.benefit-card p{font-size:14px}}
+
+/* ═══════ PROCESSO ═══════ */
+.process{
+  padding:70px 0 60px;
+  background:linear-gradient(180deg, var(--bg) 0%, var(--teal-50) 100%);
+}
+@media(min-width:760px){.process{padding:100px 0 80px}}
+.process-grid{
+  max-width:1100px;
+  margin:0 auto;
+  padding:0 16px;
+  display:grid;
+  grid-template-columns:1fr;
+  gap:24px;
+}
+@media(min-width:600px){.process-grid{grid-template-columns:repeat(2, 1fr); gap:28px}}
+@media(min-width:1024px){.process-grid{grid-template-columns:repeat(4, 1fr); gap:20px}}
+.step-card{
+  position:relative;
+  background:#fff;
+  border:1px solid var(--ink-100);
+  border-radius:var(--r-lg);
+  padding:24px 18px 20px;
+  text-align:center;
+  transition:transform .35s var(--ease-spring), box-shadow .35s;
+}
+.step-card:hover{
+  transform:translateY(-3px);
+  box-shadow:0 14px 32px rgba(30,168,143,.10);
+}
+.step-num{
+  display:inline-flex;
+  align-items:center; justify-content:center;
+  width:48px; height:48px;
+  border-radius:50%;
+  background:linear-gradient(135deg, var(--teal-500), var(--teal-700));
+  color:#fff;
+  font-family:var(--font-display);
+  font-size:20px;
+  font-weight:600;
+  margin-bottom:14px;
+  box-shadow:0 10px 24px rgba(30,168,143,.32);
+}
+.step-card h3{
+  font-size:17px;
+  color:var(--ink-900);
+  margin-bottom:6px;
+  font-weight:500;
+}
+.step-card p{
+  font-size:13px;
+  color:var(--ink-500);
+  line-height:1.55;
+}
+@media(min-width:480px){.step-card p{font-size:14px}}
+
+/* ═══════ COMPARAÇÃO ═══════ */
+.compare{
+  padding:70px 0 60px;
+  background:var(--bg);
+}
+@media(min-width:760px){.compare{padding:100px 0 80px}}
+.compare-table-wrap{
+  max-width:900px;
+  margin:0 auto;
+  padding:0 16px;
+}
+.compare-table{
+  width:100%;
+  border-collapse:collapse;
+  background:#fff;
+  border:1px solid var(--ink-100);
+  border-radius:var(--r-lg);
+  overflow:hidden;
+  box-shadow:0 8px 24px rgba(0,0,0,.04);
+}
+.compare-table th, .compare-table td{
+  padding:11px 12px;
+  text-align:left;
+  font-size:12px;
+  border-bottom:1px solid var(--ink-100);
+}
+@media(min-width:480px){.compare-table th, .compare-table td{padding:14px 16px; font-size:13px}}
+@media(min-width:600px){.compare-table th, .compare-table td{padding:18px 20px; font-size:14px}}
+.compare-table thead th{
+  background:linear-gradient(135deg, var(--teal-700), var(--teal-500));
+  color:#fff;
+  font-weight:600;
+  font-size:11px;
+  text-transform:uppercase;
+  letter-spacing:.06em;
+}
+@media(min-width:480px){.compare-table thead th{font-size:12px; letter-spacing:.08em}}
+.compare-table tbody tr:last-child td{border-bottom:0}
+.compare-table tbody tr:nth-child(even){background:var(--teal-50)}
+.compare-table td:first-child{
+  color:var(--ink-700);
+  font-weight:500;
+}
+.compare-table td.yes{color:var(--teal-700); font-weight:600}
+.compare-table td.no{color:var(--ink-300)}
+
+/* ═══════ FAQ ═══════ */
+.faq{
+  padding:70px 0 60px;
+  background:linear-gradient(180deg, var(--bg) 0%, var(--teal-50) 100%);
+}
+@media(min-width:760px){.faq{padding:100px 0 80px}}
+.faq-list{
+  max-width:780px;
+  margin:0 auto;
+  padding:0 16px;
+}
+.faq-item{
+  background:#fff;
+  border:1px solid var(--ink-100);
+  border-radius:var(--r-md);
+  margin-bottom:10px;
+  overflow:hidden;
+  transition:border-color .25s, box-shadow .25s;
+}
+.faq-item[open]{
+  border-color:var(--teal-300);
+  box-shadow:0 8px 24px rgba(30,168,143,.08);
+}
+.faq-question{
+  display:flex; align-items:center; justify-content:space-between;
+  gap:12px;
+  cursor:pointer;
+  background:none; border:none;
+  padding:16px 18px;
+  width:100%;
+  text-align:left;
+  color:var(--ink-900);
+  font-family:var(--font-body);
+  font-size:14px;
+  font-weight:600;
+  line-height:1.4;
+  transition:color .2s;
+  list-style:none;
+}
+.faq-question::-webkit-details-marker{display:none}
+@media(min-width:480px){.faq-question{font-size:15px; padding:18px 22px}}
+@media(min-width:760px){.faq-question{font-size:16px}}
+.faq-question:hover{color:var(--teal-700)}
+.faq-icon{
+  flex-shrink:0;
+  width:28px; height:28px;
+  display:flex; align-items:center; justify-content:center;
+  border-radius:50%;
+  background:var(--teal-50);
+  color:var(--teal-700);
+  transition:transform .3s var(--ease-spring);
+}
+.faq-item[open] .faq-icon{transform:rotate(45deg)}
+.faq-answer{
+  padding:0 18px 16px;
+  font-size:13px;
+  color:var(--ink-500);
+  line-height:1.65;
+}
+@media(min-width:480px){.faq-answer{padding:0 22px 18px; font-size:14px}}
+
+/* ═══════ FINAL / CTA ═══════ */
+.final-section{
+  position:relative;
+  padding:70px 16px 60px;
+  background:
+    radial-gradient(60% 50% at 50% 60%, rgba(125,211,192,.20), transparent 60%),
+    linear-gradient(180deg, #062420 0%, #0a4f47 60%, #062420 100%);
+  overflow:hidden;
+  color:#fff;
+}
+@media(min-width:760px){.final-section{padding:100px 28px 80px}}
+.final-grid{
+  max-width:1100px;
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:1fr;
+  gap:32px;
+  align-items:center;
+}
+@media(min-width:960px){.final-grid{grid-template-columns:1.05fr .95fr; gap:64px}}
+.final-col-left{
+  display:flex; flex-direction:column;
+  align-items:center; text-align:center;
+  width:100%;
+}
+@media(min-width:960px){.final-col-left{align-items:flex-start; text-align:left}}
+.urgency-pill{
+  display:inline-flex; align-items:center; gap:8px;
+  padding:7px 14px; border-radius:var(--r-pill);
+  background:rgba(255,255,255,.10); backdrop-filter:blur(10px);
+  font-size:11px; font-weight:600; color:#fff;
+  border:1px solid rgba(255,255,255,.18);
+  margin-bottom:16px;
+  max-width:100%;
+}
+@media(min-width:480px){.urgency-pill{font-size:12px; padding:8px 16px}}
+.urgency-pill .pulse{
+  width:7px; height:7px; border-radius:50%;
+  background:var(--teal-300);
+  box-shadow:0 0 0 0 rgba(125,211,192,.7);
+  animation:pulse-dot 2s infinite;
+}
+@keyframes pulse-dot{
+  0%{box-shadow:0 0 0 0 rgba(125,211,192,.7)}
+  70%{box-shadow:0 0 0 12px rgba(125,211,192,0)}
+  100%{box-shadow:0 0 0 0 rgba(125,211,192,0)}
+}
+.final-section h2{
+  font-family:var(--font-display);
+  font-size:clamp(26px,5vw,44px);
+  font-weight:500;
+  color:#fff;
+  margin-bottom:14px;
+  letter-spacing:-.01em;
+  line-height:1.1;
+  text-wrap:balance;
+}
+.final-section h2 em{font-style:italic; color:var(--teal-300); font-weight:500}
+.final-lead{
+  font-size:14px;
+  color:rgba(255,255,255,.85);
+  margin-bottom:24px;
+  line-height:1.55;
+}
+@media(min-width:480px){.final-lead{font-size:15px}}
+.final-bullets{
+  display:flex; flex-direction:column;
+  gap:10px; margin-bottom:28px;
+  width:100%; list-style:none; padding:0;
+}
+.final-bullets li{
+  position:relative;
+  padding-left:30px;
+  font-size:13px;
+  color:rgba(255,255,255,.92);
+  line-height:1.5;
+  text-align:left;
+}
+@media(min-width:480px){.final-bullets li{font-size:14px}}
+.final-bullets li::before{
+  content:""; position:absolute; left:0; top:2px;
+  width:18px; height:18px;
+  border-radius:50%; background:var(--teal-300);
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230a4f47' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'><polyline points='20 6 9 17 4 12'/></svg>");
+  background-size:12px; background-repeat:no-repeat; background-position:center;
+}
+
+/* FORM */
+.form-card{
+  background:#fff;
+  color:var(--ink-700);
+  border-radius:var(--r-lg);
+  padding:24px 20px;
+  box-shadow:0 30px 80px rgba(0,0,0,.4);
+  width:100%;
+}
+@media(min-width:480px){.form-card{padding:28px 24px}}
+@media(min-width:760px){.form-card{padding:36px 32px}}
+.form-card h3{
+  font-family:var(--font-display);
+  font-weight:600;
+  font-size:22px;
+  color:var(--ink-900);
+  margin-bottom:4px;
+  letter-spacing:-.01em;
+  text-align:center;
+}
+@media(min-width:480px){.form-card h3{font-size:24px}}
+.form-card .sub{
+  color:var(--ink-500);
+  font-size:12px;
+  text-align:center;
+  margin-bottom:20px;
+}
+@media(min-width:480px){.form-card .sub{font-size:13px}}
+.form-group{margin-bottom:14px}
+.form-group label{
+  display:block;
+  font-size:11px;
+  font-weight:700;
+  color:var(--ink-700);
+  margin-bottom:6px;
+  letter-spacing:.04em;
+  text-transform:uppercase;
+}
+.form-group input, .form-group select{
+  width:100%;
+  padding:12px 14px;
+  border:1.5px solid var(--ink-100);
+  border-radius:var(--r-md);
+  font-size:14px;
+  color:var(--ink-900);
+  background:#fff;
+  transition:border-color .2s, box-shadow .2s;
+  font-family:inherit;
+}
+@media(min-width:480px){.form-group input, .form-group select{font-size:15px}}
+.form-group input:focus, .form-group select:focus{
+  outline:none;
+  border-color:var(--teal-500);
+  box-shadow:0 0 0 4px rgba(30,168,143,.12);
+}
+.form-card .btn{
+  width:100%; margin-top:6px;
+  padding:14px 20px;
+  font-size:14px;
+}
+@media(min-width:480px){.form-card .btn{font-size:15px}}
+.form-success{
+  display:none;
+  text-align:center;
+  padding:24px 16px;
+}
+.form-success.show{display:block}
+.form-success-icon{
+  width:60px; height:60px; margin:0 auto 14px;
+  border-radius:50%;
+  background:var(--teal-300);
+  color:var(--teal-900);
+  display:flex; align-items:center; justify-content:center;
+}
+.form-success h3{color:var(--ink-900); font-family:var(--font-display); font-size:22px; margin-bottom:8px}
+.form-success p{color:var(--ink-500); font-size:13px}
+
+/* FOOTER */
+footer{
+  background:var(--ink-900);
+  color:rgba(255,255,255,.7);
+  padding:50px 0 24px;
+}
+@media(min-width:760px){footer{padding:70px 0 30px}}
+.footer-grid{
+  max-width:var(--max);
+  margin:0 auto;
+  padding:0 20px;
+  display:grid;
+  grid-template-columns:1fr;
+  gap:28px;
+  margin-bottom:24px;
+}
+@media(min-width:760px){
+  .footer-grid{grid-template-columns:1.2fr 1fr 1.2fr; gap:48px; padding:0 28px}
+}
+.footer-col h5{
+  font-family:var(--font-body);
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:#fff;
+  margin-bottom:12px;
+}
+.footer-col p{
+  font-size:13px;
+  line-height:1.7;
+  color:rgba(255,255,255,.7);
+  margin-bottom:6px;
+}
+@media(min-width:480px){.footer-col p{font-size:14px}}
+.footer-col a{color:rgba(255,255,255,.7); transition:color .2s}
+.footer-col a:hover{color:var(--teal-300)}
+.map-link{
+  display:inline-flex !important;
+  align-items:center; gap:6px;
+  margin-top:8px;
+  color:var(--teal-300) !important;
+  font-weight:600;
+  font-size:12px;
+}
+@media(min-width:480px){.map-link{font-size:13px}}
+.footer-bottom{
+  padding:20px 16px 0;
+  border-top:1px solid rgba(255,255,255,.08);
+  text-align:center;
+  max-width:var(--max);
+  margin:0 auto;
+}
+.footer-bottom p{font-size:11px; color:rgba(255,255,255,.4); margin:0}
+@media(min-width:480px){.footer-bottom p{font-size:12px}}
+
+/* WHATSAPP FLOAT */
+.wa-float{
+  position:fixed; bottom:16px; right:14px; z-index:60;
+  width:52px; height:52px; border-radius:50%;
+  background:#25d366; color:#fff;
+  display:grid; place-items:center;
+  box-shadow:0 8px 24px rgba(37,211,102,.42);
+  transition:transform .25s var(--ease-spring);
+  animation:wa-bounce 3s ease-in-out infinite;
+}
+@media(min-width:760px){.wa-float{width:58px; height:58px; bottom:20px; right:20px}}
+.wa-float:hover{transform:scale(1.08)}
+.wa-float svg{width:26px; height:26px; fill:#fff}
+@media(min-width:760px){.wa-float svg{width:28px; height:28px}}
+@keyframes wa-bounce{
+  0%, 100%{transform:translateY(0)}
+  50%{transform:translateY(-5px)}
+}
+
+/* ═══════ ANTES E DEPOIS ═══════ */
+.antes-depois{
+  padding:70px 0 60px;
+  background:linear-gradient(180deg, var(--bg) 0%, var(--teal-50) 100%);
+  position:relative;
+  overflow:hidden;
+}
+@media(min-width:760px){.antes-depois{padding:100px 0 80px}}
+.antes-depois::before{
+  content:"";
+  position:absolute;
+  top:-60px; left:-60px;
+  width:320px; height:320px;
+  border-radius:50%;
+  background:radial-gradient(circle, rgba(30,168,143,.08), transparent 70%);
+  pointer-events:none;
+}
+.antes-depois .section-head{margin-bottom:48px}
+
+.resultado-showcase{
+  max-width:1060px;
+  margin:0 auto;
+  padding:0 16px;
+  display:grid;
+  grid-template-columns:1fr;
+  gap:32px;
+  align-items:center;
+}
+@media(min-width:900px){
+  .resultado-showcase{
+    grid-template-columns:1.1fr 0.9fr;
+    gap:56px;
+  }
+}
+
+/* COMPARAÇÃO DENTES */
+.teeth-compare{
+  display:flex;
+  flex-direction:column;
+  gap:16px;
+}
+@media(min-width:560px){
+  .teeth-compare{flex-direction:row; gap:20px}
+}
+
+.teeth-card{
+  flex:1;
+  position:relative;
+  border-radius:var(--r-lg);
+  overflow:hidden;
+  box-shadow:0 20px 48px rgba(0,0,0,.12);
+  aspect-ratio:4/3;
+  min-height:180px;
+}
+@media(min-width:560px){.teeth-card{aspect-ratio:1/1}}
+@media(min-width:900px){.teeth-card{aspect-ratio:4/3}}
+
+.teeth-card img{
+  width:100%; height:100%;
+  object-fit:cover;
+  object-position:center;
+  display:block;
+}
+.teeth-card-label{
+  position:absolute;
+  bottom:0; left:0; right:0;
+  padding:10px 14px;
+  font-size:12px;
+  font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:.10em;
+  text-align:center;
+  backdrop-filter:blur(12px);
+}
+@media(min-width:480px){.teeth-card-label{font-size:13px; padding:12px 16px}}
+.label-antes{
+  background:rgba(15,31,42,.78);
+  color:rgba(255,255,255,.85);
+}
+.label-depois{
+  background:rgba(10,79,71,.85);
+  color:#fff;
+}
+
+.arrow-middle{
+  display:none;
+  align-items:center;
+  justify-content:center;
+  flex-shrink:0;
+}
+@media(min-width:560px){
+  .arrow-middle{
+    display:flex;
+    width:36px;
+    align-self:center;
+  }
+}
+.arrow-middle svg{width:28px; height:28px; color:var(--teal-500)}
+
+/* PACIENTE PORTRAIT */
+.portrait-side{
+  display:flex;
+  flex-direction:column;
+  gap:20px;
+  align-items:center;
+}
+@media(min-width:900px){.portrait-side{align-items:flex-start}}
+
+.portrait-frame{
+  position:relative;
+  border-radius:var(--r-lg);
+  overflow:hidden;
+  width:100%;
+  max-width:100%;
+  aspect-ratio:4/5;
+  box-shadow:0 24px 60px rgba(30,168,143,.18), 0 8px 20px rgba(0,0,0,.12);
+}
+@media(min-width:900px){.portrait-frame{aspect-ratio:3/4}}
+.portrait-frame img{
+  width:100%; height:100%;
+  object-fit:cover;
+  object-position:center 20%;
+  display:block;
+}
+.portrait-frame::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(180deg, transparent 55%, rgba(10,79,71,.5) 100%);
+  pointer-events:none;
+}
+
+.portrait-quote{
+  background:#fff;
+  border:1px solid var(--teal-100);
+  border-radius:var(--r-md);
+  padding:16px 18px;
+  position:relative;
+  max-width:320px;
+  box-shadow:0 8px 24px rgba(30,168,143,.08);
+}
+@media(min-width:900px){.portrait-quote{max-width:100%}}
+.portrait-quote::before{
+  content:'"';
+  font-family:var(--font-display);
+  font-size:52px;
+  line-height:.7;
+  color:var(--teal-300);
+  position:absolute;
+  top:8px; left:12px;
+  font-style:italic;
+}
+.portrait-quote p{
+  font-family:var(--font-display);
+  font-style:italic;
+  font-size:14px;
+  color:var(--ink-700);
+  line-height:1.55;
+  padding-left:24px;
+  margin-bottom:10px;
+}
+@media(min-width:480px){.portrait-quote p{font-size:15px}}
+.portrait-quote-author{
+  display:flex; align-items:center; gap:8px;
+  padding-left:24px;
+}
+.portrait-quote-author-dot{
+  width:6px; height:6px;
+  border-radius:50%;
+  background:var(--teal-500);
+  flex-shrink:0;
+}
+.portrait-quote-author span{
+  font-size:11px;
+  font-weight:600;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  color:var(--ink-500);
+}
+
+.resultado-badge{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:10px 18px;
+  background:linear-gradient(135deg, var(--teal-500), var(--teal-700));
+  color:#fff;
+  border-radius:var(--r-pill);
+  font-size:13px;
+  font-weight:600;
+  box-shadow:0 10px 28px rgba(30,168,143,.30);
+}
+@media(min-width:480px){.resultado-badge{font-size:14px}}
+.resultado-badge svg{width:16px; height:16px; flex-shrink:0}
+
+/* ── CTA banner strip between sections ── */
+.cta-strip{
+  background:linear-gradient(90deg, var(--teal-900), var(--teal-700));
+  padding:24px 16px;
+  text-align:center;
+}
+.cta-strip-inner{
+  max-width:760px;
+  margin:0 auto;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:14px;
+}
+@media(min-width:600px){
+  .cta-strip-inner{flex-direction:row; justify-content:space-between; text-align:left}
+}
+.cta-strip-text p{
+  color:rgba(255,255,255,.85);
+  font-size:14px;
+  line-height:1.45;
+  margin:0;
+}
+@media(min-width:480px){.cta-strip-text p{font-size:15px}}
+.cta-strip-text strong{color:#fff; font-weight:700}
+
+/* ── Trust bar ── */
+.trust-bar{
+  background:var(--ink-900);
+  padding:20px 16px;
+}
+.trust-bar-inner{
+  max-width:var(--max);
+  margin:0 auto;
+  display:flex;
+  flex-wrap:wrap;
+  gap:20px 28px;
+  justify-content:center;
+  align-items:center;
+}
+.trust-item{
+  display:flex; align-items:center; gap:8px;
+  font-size:12px;
+  color:rgba(255,255,255,.75);
+  font-weight:500;
+  letter-spacing:.02em;
+}
+@media(min-width:480px){.trust-item{font-size:13px}}
+.trust-item svg{width:16px; height:16px; color:var(--teal-300); flex-shrink:0}
+
+
+/* ═══════ MÚLTIPLOS CASOS / CAROUSEL ═══════ */
+.casos-header{
+  text-align:center;
+  max-width:720px;
+  margin:0 auto 0;
+  padding:0 16px;
+}
+.casos-tabs{
+  display:flex;
+  justify-content:center;
+  gap:10px;
+  flex-wrap:wrap;
+  padding:0 16px;
+  margin:20px auto 32px;
+}
+.caso-tab{
+  padding:8px 20px;
+  border-radius:var(--r-pill);
+  font-size:13px;
+  font-weight:600;
+  cursor:pointer;
+  border:1.5px solid var(--teal-300);
+  color:var(--teal-700);
+  background:transparent;
+  transition:all .22s var(--ease-out);
+  letter-spacing:.02em;
+}
+.caso-tab.active{
+  background:var(--teal-500);
+  color:#fff;
+  border-color:var(--teal-500);
+  box-shadow:0 8px 20px rgba(30,168,143,.28);
+}
+
+.casos-wrapper{
+  position:relative;
+  overflow:hidden;
+}
+.casos-slides{
+  display:flex;
+  transition:transform .45s var(--ease-out);
+}
+.caso-slide{
+  min-width:100%;
+  padding:0 16px 16px;
+}
+.caso-inner{
+  max-width:1060px;
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:1fr;
+  gap:24px;
+  align-items:start;
+}
+@media(min-width:860px){
+  .caso-inner{
+    grid-template-columns:1.15fr 0.85fr;
+    gap:48px;
+    align-items:center;
+  }
+}
+
+/* Fotos do caso — antes/depois inline */
+.caso-teeth-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+}
+@media(min-width:500px){.caso-teeth-grid{gap:14px}}
+
+.caso-tooth-wrap{
+  position:relative;
+  border-radius:var(--r-md);
+  overflow:hidden;
+  aspect-ratio:4/3;
+  box-shadow:0 12px 32px rgba(0,0,0,.12);
+}
+.caso-tooth-wrap img{
+  width:100%; height:100%;
+  object-fit:cover;
+  object-position:center;
+  display:block;
+}
+.caso-tooth-lbl{
+  position:absolute;
+  bottom:0; left:0; right:0;
+  padding:7px 10px;
+  font-size:10px;
+  font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:.10em;
+  text-align:center;
+  backdrop-filter:blur(10px);
+}
+@media(min-width:480px){.caso-tooth-lbl{font-size:11px; padding:9px 12px}}
+.lbl-a{ background:rgba(15,31,42,.76); color:rgba(255,255,255,.88); }
+.lbl-d{ background:rgba(10,79,71,.85); color:#fff; }
+
+/* Lateral extra foto (caso 2) */
+.caso-tooth-wrap.lateral{
+  grid-column:1 / -1;
+  aspect-ratio:16/7;
+}
+
+/* Coluna direita do caso */
+.caso-right{
+  display:flex;
+  flex-direction:column;
+  gap:16px;
+  align-items:center;
+}
+@media(min-width:860px){.caso-right{align-items:flex-start}}
+
+.caso-portrait{
+  width:100%;
+  max-width:260px;
+  aspect-ratio:3/4;
+  border-radius:var(--r-lg);
+  overflow:hidden;
+  box-shadow:0 20px 48px rgba(30,168,143,.18);
+  position:relative;
+}
+@media(min-width:860px){.caso-portrait{max-width:100%}}
+.caso-portrait img{
+  width:100%; height:100%;
+  object-fit:cover;
+  object-position:center 15%;
+  display:block;
+}
+.caso-portrait::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(180deg, transparent 55%, rgba(10,79,71,.45) 100%);
+  pointer-events:none;
+}
+
+.caso-quote{
+  background:#fff;
+  border:1px solid var(--teal-100);
+  border-radius:var(--r-md);
+  padding:14px 16px 14px 16px;
+  position:relative;
+  width:100%;
+  max-width:260px;
+  box-shadow:0 6px 20px rgba(30,168,143,.08);
+}
+@media(min-width:860px){.caso-quote{max-width:100%}}
+.caso-quote::before{
+  content:'"';
+  font-family:var(--font-display);
+  font-size:44px;
+  line-height:.6;
+  color:var(--teal-300);
+  position:absolute;
+  top:8px; left:10px;
+  font-style:italic;
+}
+.caso-quote p{
+  font-family:var(--font-display);
+  font-style:italic;
+  font-size:13px;
+  color:var(--ink-700);
+  line-height:1.55;
+  padding-left:22px;
+  margin-bottom:8px;
+}
+@media(min-width:480px){.caso-quote p{font-size:14px}}
+.caso-quote-author{
+  display:flex; align-items:center; gap:7px;
+  padding-left:22px;
+}
+.caso-quote-author span{
+  font-size:10px;
+  font-weight:600;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  color:var(--ink-400, #94a3b8);
+}
+.caso-quote-dot{
+  width:5px; height:5px;
+  border-radius:50%;
+  background:var(--teal-500);
+  flex-shrink:0;
+}
+
+.caso-cta{
+  width:100%;
+  max-width:260px;
+  display:flex;
+  justify-content:center;
+}
+@media(min-width:860px){.caso-cta{max-width:100%}}
+.caso-cta .btn{
+  width:100%;
+  justify-content:center;
+  font-size:14px;
+}
+
+/* Dots navigation */
+.casos-dots{
+  display:flex;
+  justify-content:center;
+  gap:8px;
+  padding:16px 0 4px;
+}
+.caso-dot{
+  width:8px; height:8px;
+  border-radius:50%;
+  background:var(--ink-100);
+  cursor:pointer;
+  transition:background .22s, transform .22s;
+  border:none;
+}
+.caso-dot.active{
+  background:var(--teal-500);
+  transform:scale(1.25);
+}
+
+</style>
+</head>
+<body>
+
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WJ37LDXT"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="trust-bar-inner">
+    <div class="trust-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      CRO-MA 998 · Registro ativo
+    </div>
+    <div class="trust-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      +18 anos de experiência clínica
+    </div>
+    <div class="trust-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+      +3.000 pacientes tratados
+    </div>
+    <div class="trust-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+      Provider Invisalign certificado
+    </div>
+    <div class="trust-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      São Luís — Maranhão
+    </div>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header class="header">
+  <div class="header-inner">
+    <a href="#" class="brand">
+      <div class="brand-mark">
+        <img src="assets/logo-gon-white.png" alt="GON." />
+      </div>
+      <div class="brand-text">
+        <span class="brand-name">Dr. Joaquim Gonçalves Neto</span>
+        <span class="brand-sub"><span class="brand-sub-area">Ortodontia · </span>CRO-MA 998</span>
+      </div>
+    </a>
+    <a href="#contato" class="btn" data-cta="header">
+      <span class="btn-short">Agendar</span><span class="btn-long"> avaliação</span>
+    </a>
+  </div>
+</header>
+
+<!-- SEÇÃO 1: HERO -->
+<section class="hero">
+  <div class="hero-bg-image">
+    <img src="assets/dr-joaquim-cutout.png" alt="">
+  </div>
+  <div class="hero-overlay"></div>
+  <div class="hero-container">
+    <div class="hero-copy">
+      <span class="eyebrow">Invisalign · Ortodontia Digital</span>
+      <h1>Alinhe os dentes <em>sem ninguém saber.</em></h1>
+      <p class="lead">Alinhadores invisíveis com planejamento 100% digital. Sem fios, sem brackets, sem constrangimento. Tratamento conduzido pessoalmente pelo <strong>Dr. Joaquim Gonçalves Neto</strong> — referência em ortodontia no Maranhão há mais de 18 anos.</p>
+      <div class="hero-cta">
+        <a href="#contato" class="btn">Agendar avaliação</a>
+        <a href="https://wa.me/5598987038714?text=Ol%C3%A1%2C%20quero%20saber%20sobre%20Invisalign" target="_blank" rel="noopener" class="btn btn-ghost" onclick="window.dataLayer=window.dataLayer||[];window.dataLayer.push({'event':'clique_whatsapp_drjoaquim','local_clique':'ortofontia_hero_whatsapp'});">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.2-.7.2-.2.3-.8.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.4-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5-.1-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 1.9-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.3zM12 2a10 10 0 0 0-8.5 15.3L2 22l4.8-1.5A10 10 0 1 0 12 2z"/></svg>
+          WhatsApp
+        </a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat">
+          <span class="stat-num">+18</span>
+          <span class="stat-label">Anos de experiência</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num">+3 mil</span>
+          <span class="stat-label">Pacientes tratados</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num">100%</span>
+          <span class="stat-label">Planejamento digital</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRANSIÇÃO 3D -->
+<section class="transition-section" id="rotateSection">
+  <div class="transition-sticky">
+    <div class="transition-bg"></div>
+    <div class="rotating-stage" id="rotatingStage">
+      <div class="layer-box-stage" id="layerBoxStage">
+        <img src="assets/caixa-invisalign.png" alt="Caixa Invisalign">
+      </div>
+      <div class="layer-aligner-stage" id="layerAlignerStage">
+        <img src="assets/aparelho-3d.png" alt="Alinhador Invisalign">
+      </div>
+      <div class="object-glow"></div>
+    </div>
+    <div class="transition-text">
+      <div class="transition-text-inner" id="transitionText">
+        <h2>Por dentro da caixa, a <em>revolução do seu sorriso.</em></h2>
+        <p>Alinhadores cristalinos sob medida, com escaneamento 3D. Imperceptíveis. Confortáveis. Eficazes.</p>
+      </div>
+    </div>
+    <div class="scroll-hint" id="scrollHint">
+      <span>Role para descobrir</span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="6 9 12 15 18 9"></polyline>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- AUTORIDADE / SOBRE O DR. JOAQUIM -->
+<section class="autoridade" id="autoridade">
+  <div class="autoridade-container">
+    <div class="autoridade-copy">
+      <span class="autoridade-eyebrow">Sobre o profissional</span>
+      <h2>Quem vai cuidar do <em>seu sorriso.</em></h2>
+      <p class="autoridade-lead">
+        O Dr. Joaquim Gonçalves Neto é referência em ortodontia no Maranhão, com mais de 18 anos de experiência clínica e formação contínua nas tecnologias mais modernas — incluindo Invisalign, escaneamento intraoral e planejamento digital.
+      </p>
+      <ul class="autoridade-bullets">
+        <li><strong>+18 anos</strong> em sistemas autoligados passivos e ortodontia digital</li>
+        <li><strong>+3 mil pacientes</strong> tratados em São Luís e região</li>
+        <li><strong>Provider Invisalign</strong> certificado, com tratamento conduzido pessoalmente</li>
+        <li><strong>Ex-Presidente</strong> do Conselho Regional de Odontologia do Maranhão</li>
+        <li><strong>Atendimento humanizado</strong> e consultivo, do diagnóstico ao resultado final</li>
+      </ul>
+      <div class="autoridade-credentials-inline">
+        <strong>CRO-MA</strong> <span>998</span>
+      </div>
+      <a href="#contato" class="btn">Agendar avaliação com o Dr. Joaquim</a>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- CASOS / RESULTADOS REAIS -->
+<section class="antes-depois" id="resultados" style="padding-bottom:48px">
+  <div class="casos-header section-head" style="margin-bottom:0">
+    <span class="section-eyebrow">Resultados reais</span>
+    <h2>O sorriso que você merece, <em>comprovado.</em></h2>
+    <p>Transformações reais de pacientes tratados pessoalmente pelo Dr. Joaquim com Invisalign.</p>
+  </div>
+
+  <!-- TABS -->
+  <div class="casos-tabs">
+    <button class="caso-tab active" onclick="showCaso(0)">Caso 1</button>
+    <button class="caso-tab" onclick="showCaso(1)">Caso 2</button>
+  </div>
+
+  <!-- SLIDES WRAPPER -->
+  <div class="casos-wrapper">
+    <div class="casos-slides" id="casosSlides">
+
+      <!-- ══ CASO 1 ══ -->
+      <div class="caso-slide">
+        <div class="caso-inner">
+          <!-- Antes/depois dentes -->
+          <div class="caso-teeth-grid">
+            <div class="caso-tooth-wrap">
+              <img src="assets/antes-caso1.gif" alt="Antes — caso 1" loading="lazy">
+              <div class="caso-tooth-lbl lbl-a">Antes</div>
+            </div>
+            <div class="caso-tooth-wrap">
+              <img src="assets/depois-caso1.gif" alt="Depois — caso 1" loading="lazy">
+              <div class="caso-tooth-lbl lbl-d">Depois</div>
+            </div>
+          </div>
+          <!-- Retrato + depoimento -->
+          <div class="caso-right">
+            <div class="caso-portrait">
+              <img src="assets/portrait-caso1.jpg" alt="Paciente caso 1 após Invisalign" loading="lazy">
+            </div>
+            <div class="caso-quote">
+              <p>Nunca pensei que ficar com o sorriso alinhado fosse tão discreto. Ninguém percebia que eu usava alinhador.</p>
+              <div class="caso-quote-author">
+                <span class="caso-quote-dot"></span>
+                <span>Paciente · São Luís — MA</span>
+              </div>
+            </div>
+            <div class="caso-cta">
+              <a href="#contato" class="btn" data-cta="caso1">
+                Quero o mesmo resultado
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ══ CASO 2 ══ -->
+      <div class="caso-slide">
+        <div class="caso-inner">
+          <!-- Antes/depois + lateral -->
+          <div class="caso-teeth-grid">
+            <div class="caso-tooth-wrap">
+              <img src="assets/antes-caso2-frontal.jpg" alt="Antes frontal — caso 2" loading="lazy">
+              <div class="caso-tooth-lbl lbl-a">Antes (frontal)</div>
+            </div>
+            <div class="caso-tooth-wrap">
+              <img src="assets/depois-caso2.jpg" alt="Depois — caso 2" loading="lazy">
+              <div class="caso-tooth-lbl lbl-d">Depois</div>
+            </div>
+            <div class="caso-tooth-wrap lateral">
+              <img src="assets/antes-caso2-lateral.jpg" alt="Antes lateral — caso 2" loading="lazy">
+              <div class="caso-tooth-lbl lbl-a">Antes (lateral)</div>
+            </div>
+          </div>
+          <!-- Retrato + depoimento -->
+          <div class="caso-right">
+            <div class="caso-portrait">
+              <img src="assets/portrait-caso2.jpg" alt="Paciente caso 2 após Invisalign" loading="lazy">
+            </div>
+            <div class="caso-quote">
+              <p>Me surpreendeu como foi fácil. Tratamento rápido, sem dor e o resultado ficou exatamente como eu queria.</p>
+              <div class="caso-quote-author">
+                <span class="caso-quote-dot"></span>
+                <span>Paciente · São Luís — MA</span>
+              </div>
+            </div>
+            <div class="caso-cta">
+              <a href="#contato" class="btn" data-cta="caso2">
+                Quero o mesmo resultado
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /casos-slides -->
+    <!-- Dots -->
+    <div class="casos-dots">
+      <button class="caso-dot active" onclick="showCaso(0)" aria-label="Caso 1"></button>
+      <button class="caso-dot" onclick="showCaso(1)" aria-label="Caso 2"></button>
+    </div>
+  </div>
+</section>
+
+<!-- CTA STRIP -->
+<div class="cta-strip">
+  <div class="cta-strip-inner">
+    <div class="cta-strip-text">
+      <p><strong>Vagas disponíveis.</strong> Descubra se o Invisalign é indicado pro seu caso em uma consulta personalizada.</p>
+    </div>
+    <a href="#contato" class="btn" style="flex-shrink:0; white-space:nowrap;" data-cta="strip">Agendar agora</a>
+  </div>
+</div>
+    <a href="#contato" class="btn" style="flex-shrink:0; white-space:nowrap;" data-cta="strip">Agendar agora</a>
+  </div>
+</div>
+
+
+<!-- BENEFÍCIOS -->
+<section class="benefits" id="beneficios">
+  <div class="section-head">
+    <span class="section-eyebrow">Por que Invisalign?</span>
+    <h2>A ortodontia que se adapta <em>à sua vida.</em></h2>
+    <p>Alinhadores que você coloca e remove quando quiser. Sem fios, sem brackets, sem dor.</p>
+  </div>
+  <div class="benefits-grid">
+    <div class="benefit-card">
+      <div class="benefit-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M2 12h2m16 0h2M12 2v2m0 16v2M5.6 5.6l1.4 1.4m9.9 9.9l1.4 1.4M5.6 18.4l1.4-1.4m9.9-9.9l1.4-1.4"/></svg>
+      </div>
+      <h3>Praticamente invisível</h3>
+      <p>Alinhadores transparentes que ninguém percebe. Continue sorrindo e vivendo sem preocupação.</p>
+    </div>
+    <div class="benefit-card">
+      <div class="benefit-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 13.87A4 4 0 0 1 7.41 6a5.11 5.11 0 0 1 1.05-1.54 5 5 0 0 1 7.08 0A5.11 5.11 0 0 1 16.59 6 4 4 0 0 1 18 13.87V21l-3-3-3 3-3-3-3 3z"/></svg>
+      </div>
+      <h3>Removível pra comer</h3>
+      <p>Você tira na hora das refeições. Sem restrição alimentar, sem acúmulo de placa entre fios.</p>
+    </div>
+    <div class="benefit-card">
+      <div class="benefit-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+      </div>
+      <h3>Sem ferir a boca</h3>
+      <p>Material lisinho que não machuca a bochecha nem a língua. Sem braquete soltando ou fio espetando.</p>
+    </div>
+    <div class="benefit-card">
+      <div class="benefit-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+      </div>
+      <h3>Planejamento 3D digital</h3>
+      <p>Você vê o resultado final <strong>antes</strong> de começar. Escaneamento intraoral preciso.</p>
+    </div>
+    <div class="benefit-card">
+      <div class="benefit-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      </div>
+      <h3>Menos consultas</h3>
+      <p>Trocas em casa a cada 1-2 semanas. Você vai ao consultório a cada 6-8 semanas só pra revisão.</p>
+    </div>
+    <div class="benefit-card">
+      <div class="benefit-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+      </div>
+      <h3>Curadoria pessoal</h3>
+      <p>Cada alinhador é único pro seu caso, com acompanhamento direto do Dr. Joaquim. Não é plano genérico.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESSO -->
+<section class="process" id="processo">
+  <div class="section-head">
+    <span class="section-eyebrow">Como funciona</span>
+    <h2>Seu tratamento começa <em>com um plano claro.</em></h2>
+    <p>Do primeiro contato ao sorriso pronto — entenda cada etapa.</p>
+  </div>
+  <div class="process-grid">
+    <div class="step-card">
+      <div class="step-num">1</div>
+      <h3>Avaliação inicial</h3>
+      <p>Consulta pra entender seu caso, expectativas e verificar se o Invisalign é indicado.</p>
+    </div>
+    <div class="step-card">
+      <div class="step-num">2</div>
+      <h3>Escaneamento 3D</h3>
+      <p>Captura digital da sua arcada — sem moldagem incômoda. Tecnologia de ponta.</p>
+    </div>
+    <div class="step-card">
+      <div class="step-num">3</div>
+      <h3>Plano + simulação</h3>
+      <p>Você vê o resultado final do sorriso em 3D antes mesmo de começar.</p>
+    </div>
+    <div class="step-card">
+      <div class="step-num">4</div>
+      <h3>Use, troque, sorria</h3>
+      <p>Recebe os alinhadores, troca em casa, consultas a cada 6-8 semanas.</p>
+    </div>
+  </div>
+</section>
+
+<!-- COMPARAÇÃO -->
+<section class="compare">
+  <div class="section-head">
+    <span class="section-eyebrow">Invisalign vs Aparelho fixo</span>
+    <h2>A diferença <em>está nos detalhes.</em></h2>
+  </div>
+  <div class="compare-table-wrap">
+    <table class="compare-table">
+      <thead>
+        <tr>
+          <th>Característica</th>
+          <th>Invisalign</th>
+          <th>Fixo</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Aparência</td><td class="yes">✓ Transparente</td><td class="no">— Visível</td></tr>
+        <tr><td>Comer normalmente</td><td class="yes">✓ Sem restrições</td><td class="no">— Restrições</td></tr>
+        <tr><td>Higiene oral</td><td class="yes">✓ Sem dificuldade</td><td class="no">— Mais difícil</td></tr>
+        <tr><td>Consultas</td><td class="yes">✓ A cada 6-8 sem.</td><td class="no">— A cada 3-4 sem.</td></tr>
+        <tr><td>Desconforto</td><td class="yes">✓ Mínimo</td><td class="no">— Moderado/alto</td></tr>
+        <tr><td>Planejamento 3D</td><td class="yes">✓ Padrão</td><td class="no">— Não disponível</td></tr>
+        <tr><td>Ver resultado antes</td><td class="yes">✓ Sim</td><td class="no">— Não</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq" id="faq">
+  <div class="section-head">
+    <span class="section-eyebrow">Perguntas frequentes</span>
+    <h2>Tire suas <em>dúvidas.</em></h2>
+  </div>
+  <div class="faq-list">
+    <details class="faq-item">
+      <summary class="faq-question">
+        Quanto tempo dura o tratamento?
+        <span class="faq-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+      </summary>
+      <div class="faq-answer">Varia conforme o caso. Tratamentos leves: 6-8 meses. Casos complexos: 12-24 meses. Após a avaliação e o escaneamento 3D, você recebe um prazo estimado claro.</div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-question">
+        Preciso usar o alinhador o tempo todo?
+        <span class="faq-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+      </summary>
+      <div class="faq-answer">Sim — pelo menos 22 horas por dia. Você só remove pra comer, beber, escovar os dentes e usar fio dental. Disciplina é fundamental pro sucesso do tratamento.</div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-question">
+        Invisalign serve pra qualquer caso?
+        <span class="faq-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+      </summary>
+      <div class="faq-answer">Hoje o Invisalign trata desde casos simples até complexos: apinhamentos, diastemas, más-oclusões, mordidas profundas e cruzadas. Só na avaliação clínica confirmamos a indicação ideal.</div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-question">
+        Qual o valor do tratamento?
+        <span class="faq-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+      </summary>
+      <div class="faq-answer">Depende da complexidade e duração estimada. Trabalhamos com planos personalizados e diferentes formas de pagamento. Após a avaliação, você recebe um orçamento detalhado sem compromisso.</div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-question">
+        Vou sentir dor com os alinhadores?
+        <span class="faq-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+      </summary>
+      <div class="faq-answer">Nos primeiros dias de cada novo alinhador, uma leve pressão (sinal de que está funcionando). Mas sem a dor aguda do aparelho fixo. É bem mais confortável.</div>
+    </details>
+  </div>
+</section>
+
+<!-- FINAL -->
+<section class="final-section" id="contato">
+  <div class="final-grid">
+    <div class="final-col-left">
+      <span class="urgency-pill"><span class="pulse"></span>⚠️ Vagas limitadas para avaliação esta semana</span>
+      <h2>Comece hoje o sorriso que <em>você sempre quis.</em></h2>
+      <p class="final-lead">Deixe seu contato e nossa equipe responde em até 1 dia útil pra agendar sua avaliação personalizada com o Dr. Joaquim Gonçalves Neto.</p>
+      <ul class="final-bullets">
+        <li>Avaliação completa com análise digital personalizada</li>
+        <li>Verificação se o Invisalign é indicado pro seu caso</li>
+        <li>Simulação 3D do resultado antes</li>
+        <li>Plano personalizado, prazo e valor estimados</li>
+      </ul>
+    </div>
+    <div>
+      <div class="form-card">
+        <form id="contactForm">
+          <h3>Agende sua avaliação</h3>
+          <p class="sub">Resposta em até 1 dia útil. Seus dados são protegidos.</p>
+          <div class="form-group">
+            <label for="nome">Nome completo</label>
+            <input type="text" id="nome" name="nome" required placeholder="Como devemos te chamar?">
+          </div>
+          <div class="form-group">
+            <label for="problema">O que mais te incomoda no seu sorriso?</label>
+            <select id="problema" name="problema" required>
+              <option value="">Selecione uma opção</option>
+              <option value="Dentes tortos / apinhados">Dentes tortos / apinhados</option>
+              <option value="Diastema (espaço entre os dentes)">Diastema (espaço entre os dentes)</option>
+              <option value="Mordida (cruzada, profunda, aberta)">Mordida (cruzada, profunda, aberta)</option>
+              <option value="Estética geral do sorriso">Estética geral do sorriso</option>
+              <option value="Recomendação de outro profissional">Recomendação de outro profissional</option>
+              <option value="Outro motivo">Outro motivo</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="telefone">WhatsApp</label>
+            <input type="tel" id="telefone" name="telefone" required placeholder="(XX) 99999-9999">
+          </div>
+          <button type="submit" class="btn" data-cta="form-submit">
+            Quero agendar minha avaliação
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </button>
+        </form>
+        <div class="form-success" id="formSuccess">
+          <div class="form-success-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+          <h3>Tudo certo!</h3>
+          <p>Te redirecionamos pro WhatsApp. Entraremos em contato em breve.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-col">
+      <h5>Endereço</h5>
+      <p>GON. Odontologia<br/>Av. dos Holandeses, Q-10, L-01, N° 01<br/>Calhau · São Luís — MA</p>
+      <a href="https://www.google.com/maps/place/Joaquim+Gon%C3%A7alves+-+Ortodontia+est%C3%A9tica+em+S%C3%A3o+Lu%C3%ADs,+MA,+ed.+Praia+Shopping+-+Av.+dos+Holandeses,+s%2Fn+-+Calhau,+S%C3%A3o+Lu%C3%ADs+-+MA,+65071-380/@-2.4925915,-44.2649557,15z" target="_blank" rel="noopener" class="map-link">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        Ver no Google Maps
+      </a>
+    </div>
+    <div class="footer-col">
+      <h5>Contato</h5>
+      <p><a href="tel:+5598987038714">(98) 98703-8714</a><br/>
+        <a href="https://wa.me/5598987038714" target="_blank" rel="noopener" onclick="window.dataLayer=window.dataLayer||[];window.dataLayer.push({'event':'clique_whatsapp_drjoaquim','local_clique':'ortofontia_footer_whatsapp'});">WhatsApp direto</a>
+      </p>
+    </div>
+    <div class="footer-col">
+      <h5>Legal</h5>
+      <p>GON. Odontologia<br/>EPAO: 155<br/>Responsável Técnico: Dr. Joaquim Gonçalves Neto<br/>CRO-MA 998</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 GON. Odontologia · Dr. Joaquim Gonçalves Neto · Todos os direitos reservados.</p>
+    <p style="margin-top:4px">Atendimento conforme normas do CFO · Resolução CFO-118/2012</p>
+  </div>
+</footer>
+
+<!-- WHATSAPP FLOAT -->
+<a href="https://wa.me/5598987038714?text=Ol%C3%A1%2C%20quero%20saber%20sobre%20Invisalign%20com%20o%20Dr.%20Joaquim" class="wa-float" target="_blank" rel="noopener" aria-label="WhatsApp" onclick="window.dataLayer=window.dataLayer||[];window.dataLayer.push({'event':'clique_whatsapp_drjoaquim','local_clique':'ortofontia_whatsapp_flutuante'});">
+  <svg viewBox="0 0 24 24"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.2-.7.2-.2.3-.8.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.4-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5-.1-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 1.9-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.3zM12 2a10 10 0 0 0-8.5 15.3L2 22l4.8-1.5A10 10 0 1 0 12 2z"/></svg>
+</a>
+
+<script>
+
+// ═══════ CASOS CAROUSEL ═══════
+(function(){
+  let current = 0;
+  window.showCaso = function(idx){
+    current = idx;
+    const slides = document.getElementById('casosSlides');
+    if(slides) slides.style.transform = 'translateX(-' + (idx * 100) + '%)';
+    document.querySelectorAll('.caso-tab').forEach((t,i)=>t.classList.toggle('active', i===idx));
+    document.querySelectorAll('.caso-dot').forEach((d,i)=>d.classList.toggle('active', i===idx));
+  };
+
+  // Touch swipe support
+  const wrapper = document.querySelector('.casos-wrapper');
+  if(!wrapper) return;
+  let startX = 0, isDragging = false;
+  wrapper.addEventListener('touchstart', e=>{ startX = e.touches[0].clientX; isDragging = true; }, {passive:true});
+  wrapper.addEventListener('touchend', e=>{
+    if(!isDragging) return;
+    const diff = startX - e.changedTouches[0].clientX;
+    if(Math.abs(diff) > 50){
+      const total = document.querySelectorAll('.caso-slide').length;
+      window.showCaso(Math.max(0, Math.min(total-1, current + (diff > 0 ? 1 : -1))));
+    }
+    isDragging = false;
+  }, {passive:true});
+})();
+
+// ═══════ SCROLL-DRIVEN ROTATION ═══════
+(function(){
+  const section = document.getElementById('rotateSection');
+  const layerBox = document.getElementById('layerBoxStage');
+  const layerAligner = document.getElementById('layerAlignerStage');
+  const transitionText = document.getElementById('transitionText');
+  const scrollHint = document.getElementById('scrollHint');
+
+  if(!section || !layerBox || !layerAligner) return;
+
+  let ticking = false;
+  let alignerBaseRotation = 0;
+
+  function lerp(a, b, t){ return a + (b - a) * t }
+  function clamp(v, min, max){ return Math.max(min, Math.min(max, v)) }
+  function smoothstep(min, max, value){
+    const x = clamp((value - min) / (max - min), 0, 1);
+    return x * x * (3 - 2 * x);
+  }
+
+  function update(){
+    const rect = section.getBoundingClientRect();
+    const sectionHeight = section.offsetHeight;
+    const viewportHeight = window.innerHeight;
+    const scrolled = -rect.top;
+    const maxScroll = sectionHeight - viewportHeight;
+    let progress = scrolled / maxScroll;
+    progress = clamp(progress, 0, 1);
+
+    // CAIXA: 0-15% visível, 15-35% encolhe e some
+    let boxScale, boxOpacity, boxRotation;
+    if(progress < 0.15){
+      boxScale = 1;
+      boxOpacity = 1;
+      boxRotation = lerp(-2, 0, progress / 0.15);
+    } else if(progress < 0.35){
+      const t = smoothstep(0.15, 0.35, progress);
+      boxScale = lerp(1, 0.4, t);
+      boxOpacity = lerp(1, 0, t);
+      boxRotation = lerp(0, -30, t);
+    } else {
+      boxScale = 0.4;
+      boxOpacity = 0;
+      boxRotation = -30;
+    }
+    layerBox.style.transform = `scale(${boxScale}) rotate(${boxRotation}deg)`;
+    layerBox.style.opacity = boxOpacity;
+
+    // APARELHO: 25-45% cresce, 45-85% gira, 85-100% estabiliza
+    let alignerScale, alignerOpacity, alignerRotation;
+    if(progress < 0.25){
+      alignerScale = 0;
+      alignerOpacity = 0;
+      alignerRotation = 0;
+    } else if(progress < 0.45){
+      const t = smoothstep(0.25, 0.45, progress);
+      alignerScale = lerp(0, 1, t);
+      alignerOpacity = lerp(0, 1, t);
+      alignerRotation = lerp(0, 180, t) + alignerBaseRotation;
+    } else if(progress < 0.85){
+      const t = (progress - 0.45) / 0.4;
+      alignerScale = 1;
+      alignerOpacity = 1;
+      alignerRotation = 180 + t * 720 + alignerBaseRotation;
+    } else {
+      const t = smoothstep(0.85, 1, progress);
+      alignerScale = lerp(1, 0.85, t);
+      alignerOpacity = lerp(1, 0.95, t);
+      const currentRot = 180 + 720 + alignerBaseRotation;
+      const targetRot = Math.round(currentRot / 360) * 360;
+      alignerRotation = lerp(currentRot, targetRot, t);
+    }
+
+    const xTilt = Math.sin(progress * Math.PI) * 12;
+    layerAligner.style.transform = `scale(${alignerScale}) rotateY(${alignerRotation}deg) rotateX(${xTilt}deg)`;
+    layerAligner.style.opacity = alignerOpacity;
+
+    if(scrollHint){
+      scrollHint.style.opacity = progress < 0.08 ? (1 - progress * 12) : 0;
+    }
+
+    if(progress > 0.50 && progress < 0.90){
+      transitionText.classList.add('active');
+    } else {
+      transitionText.classList.remove('active');
+    }
+
+    ticking = false;
+  }
+
+  function onScroll(){
+    if(!ticking){
+      requestAnimationFrame(update);
+      ticking = true;
+    }
+  }
+
+  window.addEventListener('scroll', onScroll, {passive:true});
+  window.addEventListener('resize', onScroll, {passive:true});
+
+  let lastTime = performance.now();
+  function continuousRotation(now){
+    const dt = (now - lastTime) / 1000;
+    lastTime = now;
+    alignerBaseRotation += dt * 12;
+    update();
+    requestAnimationFrame(continuousRotation);
+  }
+  requestAnimationFrame(continuousRotation);
+  update();
+})();
+
+// ═══════ FORM ═══════
+document.getElementById('contactForm').addEventListener('submit', function(e){
+  e.preventDefault();
+  const nome = document.getElementById('nome').value.trim();
+  const problema = document.getElementById('problema').value;
+  const telefone = document.getElementById('telefone').value.trim();
+  if(!nome || !problema || !telefone) return;
+
+  const mensagem = `🦷 Avaliação Invisalign - Dr. Joaquim Gonçalves Neto
+
+👤 Nome: ${nome}
+📱 WhatsApp: ${telefone}
+😟 Principal incômodo: ${problema}
+
+_Gostaria de agendar uma avaliação personalizada para tratamento com Invisalign._`;
+
+  const whatsappUrl = `https://wa.me/5598987038714?text=${encodeURIComponent(mensagem)}`;
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({'event':'clique_whatsapp_drjoaquim','local_clique':'ortofontia_formulario_final'});
+  window.open(whatsappUrl, '_blank');
+
+  document.getElementById('contactForm').style.display = 'none';
+  document.getElementById('formSuccess').classList.add('show');
+});
+</script>
+
+</body>
+</html>
