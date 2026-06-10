@@ -1596,6 +1596,135 @@ footer{
   transform:scale(1.25);
 }
 
+
+/* ═══════ HERO SLIDESHOW (atrás do Dr.) ═══════ */
+.hero-slideshow{
+  position:absolute;
+  inset:0;
+  z-index:0;
+  overflow:hidden;
+}
+.hero-slide{
+  position:absolute;
+  inset:0;
+  opacity:0;
+  will-change:opacity;
+  animation:heroSlide 24s infinite;
+}
+.hero-slide img{
+  width:100%; height:100%;
+  object-fit:cover;
+  object-position:center;
+  display:block;
+  filter:blur(2px) saturate(0.85);
+  transform:scale(1.05);
+}
+/* Gradiente escuro em cima de cada slide para manter leiturabilidade */
+.hero-slide::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:rgba(4,24,20,.52);
+  pointer-events:none;
+}
+.hero-slide:nth-child(1){ animation-delay:0s }
+.hero-slide:nth-child(2){ animation-delay:6s }
+.hero-slide:nth-child(3){ animation-delay:12s }
+.hero-slide:nth-child(4){ animation-delay:18s }
+
+@keyframes heroSlide{
+  0%     { opacity:0 }
+  5%     { opacity:1 }
+  22%    { opacity:1 }
+  28%    { opacity:0 }
+  100%   { opacity:0 }
+}
+
+/* Dr. fica sobre o slideshow — z-index levemente maior */
+.hero-bg-image{
+  z-index:1 !important;
+}
+.hero-bg-image img{
+  /* transparência aumentada levemente pra deixar slides aparecerem */
+  opacity:.88 !important;
+}
+@media(min-width:600px){
+  .hero-bg-image img{ opacity:.93 !important }
+}
+
+/* Overlay ajustado — menos opaco pra slides aparecerem nos cantos */
+.hero-overlay-v2{
+  position:absolute; inset:0;
+  z-index:2;
+  background:
+    linear-gradient(180deg, rgba(10,79,71,.40) 0%, rgba(10,79,71,.22) 30%, rgba(10,79,71,.35) 70%, rgba(6,36,32,.72) 100%),
+    radial-gradient(70% 50% at 30% 50%, rgba(10,79,71,.28), transparent 70%);
+  pointer-events:none;
+}
+@media(min-width:880px){
+  .hero-overlay-v2{
+    background:
+      linear-gradient(90deg, rgba(10,79,71,.72) 0%, rgba(10,79,71,.45) 35%, rgba(10,79,71,.08) 65%, rgba(10,79,71,.12) 100%),
+      radial-gradient(60% 50% at 30% 50%, rgba(10,79,71,.25), transparent 70%);
+  }
+}
+
+
+/* ═══════ TRANSITION SECTION — BG ANTES/DEPOIS ═══════ */
+.trans-bg-antes,
+.trans-bg-depois{
+  position:absolute;
+  inset:0;
+  z-index:1; /* atrás do rotating-stage (z-index:2) */
+  overflow:hidden;
+  pointer-events:none;
+  will-change:opacity;
+  transition:none; /* controlado por JS */
+}
+.trans-bg-antes img,
+.trans-bg-depois img{
+  width:100%; height:100%;
+  object-fit:cover;
+  object-position:center;
+  display:block;
+  filter:blur(10px) saturate(0.65) brightness(0.80);
+  transform:scale(1.10); /* evita borda branca do blur */
+}
+/* Vignette: escurece o centro (onde fica o objeto) e deixa as bordas visíveis */
+.trans-bg-antes::after,
+.trans-bg-depois::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    radial-gradient(ellipse 55% 55% at 50% 48%,
+      rgba(3,14,12,.90) 0%,
+      rgba(3,14,12,.65) 40%,
+      rgba(3,14,12,.18) 75%,
+      rgba(3,14,12,.05) 100%
+    );
+}
+
+/* Label sutil no canto */
+.trans-bg-label{
+  position:absolute;
+  top:22px;
+  right:22px;
+  z-index:3;
+  font-size:10px;
+  font-weight:700;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:rgba(255,255,255,.55);
+  background:rgba(255,255,255,.07);
+  border:1px solid rgba(255,255,255,.14);
+  border-radius:100px;
+  padding:5px 12px;
+  pointer-events:none;
+  will-change:opacity;
+  transition:none;
+}
+
 </style>
 </head>
 <body>
@@ -1650,10 +1779,24 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <!-- SEÇÃO 1: HERO -->
 <section class="hero">
+<div class="hero-slideshow" aria-hidden="true">
+  <div class="hero-slide">
+    <img src="assets/portrait-caso1.jpg" alt="" loading="eager">
+  </div>
+  <div class="hero-slide">
+    <img src="assets/depois-caso1.gif" alt="" loading="lazy">
+  </div>
+  <div class="hero-slide">
+    <img src="assets/portrait-caso2.jpg" alt="" loading="lazy">
+  </div>
+  <div class="hero-slide">
+    <img src="assets/depois-caso2.jpg" alt="" loading="lazy">
+  </div>
+</div>
   <div class="hero-bg-image">
     <img src="assets/dr-joaquim-cutout.png" alt="">
   </div>
-  <div class="hero-overlay"></div>
+  <div class="hero-overlay-v2"></div>
   <div class="hero-container">
     <div class="hero-copy">
       <span class="eyebrow">Invisalign · Ortodontia Digital</span>
@@ -1688,6 +1831,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <section class="transition-section" id="rotateSection">
   <div class="transition-sticky">
     <div class="transition-bg"></div>
+
+    <!-- BG ANTES: dentes desalinhados, aparece com a caixa -->
+    <div class="trans-bg-antes" id="transBgAntes">
+      <img src="assets/antes-caso1.gif" alt="" loading="lazy">
+    </div>
+    <div class="trans-bg-label" id="transBgLabelAntes">Antes</div>
+
+    <!-- BG DEPOIS: sorriso alinhado, aparece com o alinhador -->
+    <div class="trans-bg-depois" id="transBgDepois">
+      <img src="assets/depois-caso2.jpg" alt="" loading="lazy">
+    </div>
+    <div class="trans-bg-label" id="transBgLabelDepois" style="right:22px; top:22px;">Depois</div>
+
     <div class="rotating-stage" id="rotatingStage">
       <div class="layer-box-stage" id="layerBoxStage">
         <img src="assets/caixa-invisalign.png" alt="Caixa Invisalign">
@@ -2137,6 +2293,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   const layerAligner = document.getElementById('layerAlignerStage');
   const transitionText = document.getElementById('transitionText');
   const scrollHint = document.getElementById('scrollHint');
+  const transBgAntes  = document.getElementById('transBgAntes');
+  const transBgDepois = document.getElementById('transBgDepois');
+  const labelAntes    = document.getElementById('transBgLabelAntes');
+  const labelDepois   = document.getElementById('transBgLabelDepois');
+
+  // Opacidade máxima dos bgs — visíveis mas não ofuscam o objeto
+  const MAX_ANTES  = 0.40;
+  const MAX_DEPOIS = 0.44;
 
   if(!section || !layerBox || !layerAligner) return;
 
@@ -2216,6 +2380,34 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     } else {
       transitionText.classList.remove('active');
     }
+
+    // ── BG ANTES: visível enquanto caixa aparece, some ao mesmo tempo que ela ──
+    let antesOp;
+    if(progress < 0.10){
+      antesOp = smoothstep(0, 0.10, progress); // fade-in suave no início
+    } else if(progress < 0.18){
+      antesOp = 1;
+    } else if(progress < 0.48){
+      antesOp = 1 - smoothstep(0.18, 0.48, progress); // some junto com a caixa
+    } else {
+      antesOp = 0;
+    }
+    if(transBgAntes)  transBgAntes.style.opacity  = antesOp * MAX_ANTES;
+    if(labelAntes)    labelAntes.style.opacity     = antesOp * MAX_ANTES * 1.8;
+
+    // ── BG DEPOIS: aparece quando o alinhador surge, fica até o fim ──
+    let depoisOp;
+    if(progress < 0.28){
+      depoisOp = 0;
+    } else if(progress < 0.55){
+      depoisOp = smoothstep(0.28, 0.55, progress); // fade-in junto com o alinhador
+    } else if(progress < 0.88){
+      depoisOp = 1;
+    } else {
+      depoisOp = 1 - smoothstep(0.88, 1, progress); // leve fade no fim
+    }
+    if(transBgDepois) transBgDepois.style.opacity  = depoisOp * MAX_DEPOIS;
+    if(labelDepois)   labelDepois.style.opacity     = depoisOp * MAX_DEPOIS * 1.8;
 
     ticking = false;
   }
